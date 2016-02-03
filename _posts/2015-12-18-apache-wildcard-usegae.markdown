@@ -19,8 +19,7 @@ keywords: apache, Linux,Jekyll,web1992
 
 > 配置如下:
 
-{% highlight xml linenos %}    
-
+{% highlight xml  %}    
 NameVirtualHost 127.0.0.1
 	<VirtualHost *:81>
 	        ServerName  %0

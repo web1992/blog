@@ -60,7 +60,7 @@ str_show_all_posts: Show all posts
 #
 # Recent posts.
 #
-recent_posts_num: 10
+recent_posts_num: 5
 
 #
 # Pagination.
@@ -100,8 +100,8 @@ include: ["_pages"]
 markdown: redcarpet
 redcarpet:
   extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
-highlighter: pygments
-#highlightjs_theme: "monokai_sublime"
+#highlighter: pygments
+highlightjs_theme: "monokai_sublime"
 
 excerpt_separator: <!--more-->
 
