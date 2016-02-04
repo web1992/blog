@@ -8,7 +8,9 @@ keywords: ant,Jekyll,web1992
 ---
 
 
-> ant jar 
+> ant jar (使用ant打包`java`项目为jar文件)
+
+<!--more-->
 
 {% highlight xml %}   
 <!--ant_project public define-->

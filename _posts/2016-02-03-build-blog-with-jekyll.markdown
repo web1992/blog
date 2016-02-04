@@ -12,11 +12,13 @@ keywords: jekyll,web1992
 
 > 本文不涉及具体的安装步骤，官网都有详细的步骤，这里只提供相关的安装技巧&遇到问题的解决
 
+
 [jekyll 官网地址](http://jekyllrb.com/)
 
 [jekyll 中文官网地址](http://jekyll.bootcss.com/)
 
 
+<!--more-->
 
 * 安装准备
 	* `ruby` 运行环境安装

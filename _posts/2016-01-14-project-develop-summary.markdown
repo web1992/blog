@@ -11,6 +11,8 @@ keywords: procejt,Jekyll,web1992
 > procejt develop summary (项目开发总结)
 > 
 
+<!--more-->
+
 -  核心功能的实现
 
 > 本次项目的主要目标是什么，解决了什么问题，问题的难点

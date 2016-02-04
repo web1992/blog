@@ -9,6 +9,9 @@ keywords: mysql,Jekyll,web1992
 
 
 > mysql session character setting (mysql 解决中文乱码的问题)
+
+<!--more-->
+
 > 
 > 问题：在`shell` 中 用 `source` 执行`sql`脚本倒入的数据时，
 > 
@@ -21,3 +24,6 @@ SET CHARACTER_SET_CLIENT=utf8;
 SET CHARACTER_SET_CONNECTION=utf8;
 {% endhighlight %}
 
+> 如果在shell 命令遇到中文乱码可使用下面的命令：
+
+	mysql> set name utf8;

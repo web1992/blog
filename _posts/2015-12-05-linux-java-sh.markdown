@@ -9,6 +9,8 @@ keywords: web1992,Java, Linux,Jekyll,sh
 
 > `java` sh启动脚本
 
+<!--more-->
+
     {% highlight sh %}
     #!/bin/bash
     export LANG=en_US.UTF8

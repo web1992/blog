@@ -7,7 +7,11 @@ tags: linux
 keywords: Java, Linux,Jekyll,sh,web1992
 ---
 
-> `linux` 一条命令匹配 `/data/` 目录下的所有文件，查找文件中以 insert 开头的行，并保存内容到 `旧文件名+.txt` 文件中
+> `linux` 一条命令匹配 `/data/` 目录下的所有文件，
+>
+> 查找文件中以 insert 开头的行，并保存内容到 `旧文件名+.txt` 文件中
+
+<!--more-->
 
 {% highlight sh %}
 # 列出 `/data/` 目录下的所有文件

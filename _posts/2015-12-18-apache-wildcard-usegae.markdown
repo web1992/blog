@@ -8,6 +8,9 @@ keywords: apache, Linux,Jekyll,web1992
 ---
 
 > apache 通配符的使用
+
+<!--more-->
+
 > 
 > 用法 http://127.0.0.1/server1/action1
 > 

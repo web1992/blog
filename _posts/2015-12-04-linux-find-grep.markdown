@@ -10,6 +10,9 @@ keywords: web1992,Java, Linux,Jekyll,grep,cat
 
 > linux 下面常用的查找命令的总结,备忘
 > 
+
+<!--more-->
+
 > `grep`查找某一个文件中的关键字，如在a.txt中查找linux单词出现的位置
 
     {% highlight sh %}
