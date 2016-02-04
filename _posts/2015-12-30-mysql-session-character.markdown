@@ -18,11 +18,8 @@ keywords: mysql,Jekyll,web1992
 > 如果有中文会导致乱码，解决办法如下，
 > 
 > 在脚本的开始添加如下代码：
-
-{% highlight sql %}   
-SET CHARACTER_SET_CLIENT=utf8;
-SET CHARACTER_SET_CONNECTION=utf8;
-{% endhighlight %}
+> SET CHARACTER_SET_CLIENT=utf8;
+> SET CHARACTER_SET_CONNECTION=utf8;
 
 > 如果在shell 命令遇到中文乱码可使用下面的命令：
 

@@ -11,7 +11,7 @@ Email:<a href="mailto:erxiaoniu@gmail.com">erxiaoniu@gmail.com</a>
 
 QQ:`554933654` <br/>
 
-Desc:`a java coder.` <br/>
+Desc:`a java programmer.` <br/>
 
 Enjoy! :smiley: :gift_heart:
 
