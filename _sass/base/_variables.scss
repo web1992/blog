@@ -1,7 +1,7 @@
 // typography.
 $font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 $font-size: 16px;
-
+$font-color:#449FE6;
 // source code typography.
 $code-font-family: Consolas, Monaco, 'Andale Mono', monospace;
 $code-font-size: 0.85em;
@@ -11,8 +11,9 @@ $margin: 50px;
 
 // brand color.
 //$brand-color: #f98752;
-$brand-color: #449FE6;
-
+//$brand-color: #449FE6;
+$brand-color: #f5f5f5;
+$article-header-color:#383838; 
 // other major colors.
 $site-title-color: rgba(#000, .6);
 $page-title-color: $brand-color;

@@ -130,7 +130,8 @@
                 h1 {
                     margin: 0;
                     &, a {
-                        color: $page-title-color;
+                        //color: $page-title-color;
+                        color: $article-header-color;
                     }
                 }
                 ul.meta, ul.tags {
