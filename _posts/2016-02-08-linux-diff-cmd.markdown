@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "linux diff 命令"
@@ -16,10 +15,8 @@ man diff 的文档帮助说明:
 > diff - compare files line by line (按照行来比较文件的不同)
 >
 
-
+<!--more-->
 常用的参数
----
-
 
 a.txt
 
