@@ -24,4 +24,4 @@ keywords: mysql,Jekyll,web1992
 
 > 如果在shell 命令遇到中文乱码可使用下面的命令：
 
-	mysql> set name utf8;
+	mysql> set names utf8;
