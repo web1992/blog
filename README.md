@@ -7,7 +7,7 @@
 
 :email: web1992@foxmail.com
 
-:taurus:
+:taurus::up::signal_strength:
 
 QQ:554933654
 
