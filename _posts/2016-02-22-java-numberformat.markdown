@@ -13,9 +13,10 @@ keywords: java,web1992
 >
 > 位于 java.text 包下的工具类
 >
-
-	NumberFormat num = NumberFormat.getPercentInstance();
-	num.setMaximumIntegerDigits(3);//  整数部分
-	num.setMaximumFractionDigits(2); // 小数部分
-	// 格式化
-	String rate=num.format( 2.0f );
+{% highlight java %}
+NumberFormat num = NumberFormat.getPercentInstance();
+num.setMaximumIntegerDigits(3);//  整数部分
+num.setMaximumFractionDigits(2); // 小数部分
+// 格式化
+String rate=num.format( 2.0f );
+{% endhighlight %}
