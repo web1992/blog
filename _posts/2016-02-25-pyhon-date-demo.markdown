@@ -8,6 +8,7 @@ keywords: python,web1992
 ---
 
 ###  `python` 日期格式化例子
+<!--more-->
 
 {% highlight python %}
 # encoding=utf-8
@@ -40,5 +41,4 @@ if __name__ == '__main__':
     get_data_name()
    
 {% endhighlight %}
-<!--more-->
 
