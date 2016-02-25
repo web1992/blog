@@ -8,6 +8,8 @@ keywords: jpygments,web1992
 ---
 
 ### 使用 `jpygments` 进行代码高亮
+> jpygments 是一个代码高亮工具
+>
 > jpygments 是基于pyhon的,需要安python
 > 
 > 如果是linux,Mac系统已经安装了python(window 请自行安装python)
@@ -22,7 +24,14 @@ keywords: jpygments,web1992
 
 [pygments css 样式生成教程](https://segmentfault.com/a/1190000000661337 "pygments安装教程")
 
+### 具体流程
+- 安装Python（jpygments 是基于pyhon的）
+- 使用`pygmentize`命令进行生产想要的css样式
+- 对原来已有的css 样式进行替换
+
+
 	pygmentize -f html -a .highlight -S manni  > pygments.css
+	manni 是我选择的一个css 样式
 	我使用jekyll,代码高亮的css 是_syntax.scss
 	对以前旧的css进行覆盖（记得备份旧的样式，文件路径请修改为自己的路径）
 	cp -f ~/pygments.css ./_syntax.scss
