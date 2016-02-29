@@ -23,7 +23,7 @@ cd /data/www/
 md5sum $_file > MD5.txt
 
 ftp -n <<!
-open fpt.web1992.cn
+open ftp.web1992.cn
 user 123 456
 #这里创建多级目录会失败，可以手动创建dest_dir文件
 mkdir $dest_dir/$_version
