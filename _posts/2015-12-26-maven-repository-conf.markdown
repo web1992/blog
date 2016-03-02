@@ -74,5 +74,17 @@ keywords: maven,Jekyll,web1992
  -->
 </activeProfiles>
 
+<build>
+    <plugins>    
+         <!-- 更改maven默认的打包目录 -->
+        <plugin>
+           <artifactId>maven-war-plugin</artifactId>
+           <configuration>
+               <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+               <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+           </configuration>
+       </plugin>      
+    </plugins>
+</build>
 {% endhighlight %}
 
