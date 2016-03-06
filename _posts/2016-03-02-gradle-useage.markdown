@@ -10,7 +10,23 @@ keywords: gradle,web1992
 ###  `gradle` useage memo (gradle用法备忘)
 
 <!--more-->
+
+[1,安装](#1)
+
+[2,使用daemon](#2)
+
+[3,列出项目使用的jar包](#3)
+
+[4,置依赖的多种方式](#4)
+
+[5,build Java Library （构架jar）](#5)
+
+[6,配置gradle task](#6)
+
+[7,gradle变量配置](#7)
+
 ###1，安装
+
 	略
 gradle 文档在gradle-xxx.zip/docs/userguide/userguide.html 中可以找到
 
@@ -28,7 +44,8 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 {% endhighlight %}
 
 
-###3， 列出项目使用的jar包
+###3，列出项目使用的jar包
+
 {% highlight groovy %}
 	task listJars << {
 		configurations.compile.each { File file -> println file.name }
@@ -40,7 +57,8 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	gradle -q listJars
 {% endhighlight %}
 
-###4，配置依赖的多种方式
+###4 配置依赖的多种方式
+
 {% highlight groovy %}
 dependencies {
     runtime group: 'org.springframework', name: 'spring-core', version: '2.5'
@@ -60,7 +78,8 @@ dependencies {
 }
 
 {% endhighlight %}
-###5, build Java Library （构架jar）
+###5，build Java Library （构架jar）
+
 - 使`java-library-distribution`插件
 - 配置Zip文件名和目录
 - 执行task, `java-library-distribution` 提供了 `gradle distZip` task
@@ -84,7 +103,7 @@ dependencies {
 	gradle distZip
 {% endhighlight %}
 
-###6,配置gradle task 
+###6	配置gradle task#6 
 
 关于task的配置可参照 http://gradle.web1992.cn/more_about_tasks.html#defineAsExpression
 {% highlight groovy %}
@@ -107,7 +126,7 @@ task taskY << {
 taskX.dependsOn taskY
 {% endhighlight %}
 
-###7,gradle变量配置（局部变量&全局变量）
+###7，gradle变量配置（局部变量&全局变量）
 
 {% highlight groovy %}
 #局部变量 def 定义

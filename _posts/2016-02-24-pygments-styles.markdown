@@ -29,13 +29,13 @@ keywords: jpygments,web1992
 - 安装Python（jpygments 是基于pyhon的）
 - 使用`pygmentize`命令进行生产想要的css样式
 - 对原来已有的css 样式进行替换
-{% highlight sh %}
-pygmentize -f html -a .highlight -S manni  > pygments.css
-manni 是我选择的一个css 样式
-我使用jekyll,代码高亮的css 是_syntax.scss
-对以前旧的css进行覆盖（记得备份旧的样式，文件路径请修改为自己的路径）
-cp -f ~/pygments.css ./_syntax.scss
-{% endhighlight %}
+	{% highlight sh %}
+	pygmentize -f html -a .highlight -S manni  > pygments.css
+	manni 是我选择的一个css 样式
+	我使用jekyll,代码高亮的css 是_syntax.scss
+	对以前旧的css进行覆盖（记得备份旧的样式，文件路径请修改为自己的路径）
+	cp -f ~/pygments.css ./_syntax.scss
+	{% endhighlight %}
 
 喜欢黑色背景的样式
 
