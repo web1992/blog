@@ -22,7 +22,7 @@ keywords: java,web1992
 <!--more-->
 
 ###2 类加载器的层次结构
-
+![](http://i.imgur.com/l2Qgtuz.png)
 
 ###3 编写自己的类加载器
 
