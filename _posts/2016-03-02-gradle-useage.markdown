@@ -104,7 +104,7 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 		gradle distZip
 	{% endhighlight %}
 
-###6 配置gradle task#6 
+###6 配置gradle task
 
 关于task的配置可参照 http://gradle.web1992.cn/more_about_tasks.html#defineAsExpression
 
