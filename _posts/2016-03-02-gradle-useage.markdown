@@ -169,3 +169,20 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	
 	
 	{% endhighlight %}
+	
+	
+###8 gradle项目之间的依赖
+
+	{% highlight groovy %}
+	dependencies {
+		compile project(':a1')
+		compile project(':a2')
+	}
+    ### application 插件
+	apply plugin: 'application'
+	### 
+	version '1.0.0'
+	### 启动的Main 方法
+	mainClassName = "com.demo.A2"
+	{% endhighlight %}
+
