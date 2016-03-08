@@ -83,3 +83,8 @@ keywords: java,web1992
 	}	
 	{% endhighlight %}
 	
+>输入结果
+>
+
+	doSomeThing...
+	main...
