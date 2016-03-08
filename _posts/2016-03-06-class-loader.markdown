@@ -35,7 +35,7 @@ keywords: java,web1992
 ###4 知识准备Method.invoke 使用例子
 
 
-	{% highlight sh %}
+	{% highlight java %}
 	package com.web.clazz;
 
 	import java.lang.reflect.Method;
