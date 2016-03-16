@@ -185,4 +185,21 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	### 启动的Main 方法
 	mainClassName = "com.demo.A2"
 	{% endhighlight %}
+###9 whenReady 动态设置task 的值
+	{% highlight groovy %} 
+	task distribution << {
+    		println "We build the zip with version=$version"
+	}	
 
+	task release(dependsOn: 'distribution') << {
+    		println 'We release now'
+	}
+
+	gradle.taskGraph.whenReady {taskGraph ->
+	    if (taskGraph.hasTask(release)) {
+	        version = '1.0'
+	    } else {
+	        version = '1.0-SNAPSHOT'
+	    }
+	}	
+	{% endhighlight %}
