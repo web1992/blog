@@ -50,7 +50,8 @@ keywords: java,web1992
 
 2,根据java规范（约定）编写自己的`ClassLoader`
 ---
-	// 网络类加载器子类必须定义方法 findClass 和 loadClassData，以实现从网络加载类。下载组成该类的字节后，它应该使用方法 defineClass 来创建类实例
+	// 网络类加载器子类必须定义方法 findClass 和 loadClassData，以实现从网络加载类。
+	// 下载组成该类的字节后，它应该使用方法 defineClass 来创建类实例
 	{% highlight java %}
 	 class NetworkClassLoader extends ClassLoader {
 			 String host;
@@ -117,7 +118,8 @@ keywords: java,web1992
 使用java jni 技术，调用c/c++ 方法，对 byte[] 进行解密，并创建Class对象，返还给java程序
 
 - 定义一个 native 方法
-> private native Class<?> makeClass(String var1, byte[] var2);
+
+> private native Class<?> makeClass(String name, byte[] data);
 >
 
 >举个栗子，编写native方法，调用c/c++ 方法
@@ -125,7 +127,6 @@ keywords: java,web1992
 
 	{% highlight java %}
 	// HelloWorld.java
-	package app.cn.web1992.jni;
 	public class HelloWorld {
 
 		static {
@@ -199,7 +200,10 @@ keywords: java,web1992
 >From hello.cpp :Hello world !
 >
 
-
+7, 编写实现自己的 private native Class<?> makeClass(String name, byte[] data);
+---
+> 未完待续...
+>
 
 ###4 知识准备Method.invoke 使用例子
 
