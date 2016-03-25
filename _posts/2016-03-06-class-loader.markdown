@@ -52,7 +52,7 @@ keywords: java,web1992
 - `byte[]` -> Clazz 对象
 - Class.class.newInstance();
 
-> 一小短源码（来自 java.lang.ClassLoader）
+> 一小段源码（来自 java.lang.ClassLoader）
 >
 	{% highlight java %}
 	protected final Class<?> defineClass(String name, byte[] b, int off, int len)
