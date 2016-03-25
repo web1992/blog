@@ -15,9 +15,24 @@ keywords: java,web1992
 
 [2,类加载器的层次结构](#2)
 
-[3,编写自己的类加载器](#3)
+[3,Class对象的创建过程](#3)
 
-###1 类加载器
+[4,根据java规范（约定）编写自己的ClassLoader](#4)
+
+[5,对自己的`.class` 文件进行解密&解密](#5)
+
+[6,问题思考](#6)
+
+[7,问题解决](#7)
+
+[8,Java jni ](#8)
+
+[9,使用c/c++编写实现自己的ClassLoader](#9)
+
+[10,其他](10)
+
+1,类加载器
+---
 
 - 引导类加载器 bootstrap
 - 扩展类加载器 extension
@@ -26,12 +41,11 @@ keywords: java,web1992
 
 <!--more-->
 
-###2 类加载器的层次结构
+2,类加载器的层次结构
+---
 ![](http://i.imgur.com/l2Qgtuz.png)
 
-###3 编写自己的类加载器
-
-1,java Class 对象的创建过程
+3,Class对象的创建过程
 ---
 - `.java` 文件-> `.class` 文件
 - `.class` 文件 -> `byte[]` 数组
@@ -48,11 +62,12 @@ keywords: java,web1992
     }
 	{% endhighlight %}
 
-2,根据java规范（约定）编写自己的`ClassLoader`
+4,根据java规范（约定）编写自己的`ClassLoader`
 ---
-	// 网络类加载器子类必须定义方法 findClass 和 loadClassData，以实现从网络加载类。
-	// 下载组成该类的字节后，它应该使用方法 defineClass 来创建类实例
+
 	{% highlight java %}
+	  // 网络类加载器子类必须定义方法 findClass 和 loadClassData，以实现从网络加载类。
+	 // 下载组成该类的字节后，它应该使用方法 defineClass 来创建类实例
 	 class NetworkClassLoader extends ClassLoader {
 			 String host;
 			 int port;
@@ -69,7 +84,7 @@ keywords: java,web1992
 		 }
 	{% endhighlight %}
 	
-3, 对自己的`.class` 文件进行解密&解密
+5, 对自己的`.class` 文件进行解密&解密
 ---
 
 - 读取自己的 `.class` 文件
@@ -79,7 +94,7 @@ keywords: java,web1992
 - byte[] newByte=EncryptClazz.encryptByte(data);// 解密
 - Class<?> defineClass(String name, byte[] b, int off, int len) //生成Class对象
 
-4,问题思考，
+6,问题思考
 ---
 > 我们的代码最终会放到服务器上，进行运行,那么必须对我们的代码进行解密->运行
 >
@@ -91,7 +106,7 @@ keywords: java,web1992
 >
 > 这样就获得了源码。
 
-5,问题解决
+7,问题解决
 ---
 - 对3中自定义的 MyClassLoader 进行优化
 
@@ -113,7 +128,7 @@ keywords: java,web1992
 我们不再使用 jdk 中的 defineClass创建Class对象 ，而是自己实现 Class 的创建
 这样对于 byte[] 对象的解密过程就隐藏起来了
 
-6,java jni 
+8,java jni 
 ---
 使用java jni 技术，调用c/c++ 方法，对 byte[] 进行解密，并创建Class对象，返还给java程序
 
@@ -200,12 +215,14 @@ keywords: java,web1992
 >From hello.cpp :Hello world !
 >
 
-7, 编写实现自己的 private native Class<?> makeClass(String name, byte[] data);
+9, 使用c/c++编写实现自己的ClassLoader
 ---
 > 未完待续...
 >
+> private native Class<?> makeClass(String name, byte[] data);
 
-###4 知识准备Method.invoke 使用例子
+10, 知识准备Method.invoke 使用例子
+---
 
 
 	{% highlight java %}
