@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "resin host conf"
+date:  2016-03-28 15:25:00 +0800
+categories: java
+tags: java
+keywords: java,web1992
+---
+
+
+### java i++ 与 ++i 的区别
+
+<!--more-->
+java代码1
+---
+
+	{% highlight java %}
+	public class Test {
+
+	   public static void main(String[] args) {
+
+		        int q = 0;
+			q = q++;
+			System.out.println(q);
+	  }
+
+	{% endhighlight %}
+
+>输出结果 0
+>
+java代码2
+---                                                    
+                                                     
+        {% highlight java %}                         
+        public class Test {                          
+                                                     
+           public static void main(String[] args) {  
+                                                     
+                        int q = 0;                   
+                        q = ++q;                     
+                        System.out.println(q);       
+          }                                          
+                                                     
+        {% endhighlight %}     
+
+>输出结果 1
+> 
+
+出现这个现象的原因是由java的编译器确定的，即JVM
+---
+> 运行下面命令，查看反编译之后的代码
+>
+> javap -c Test
+>
+
+代码1的反编译：
+
+	Code:
+    	0: iconst_0
+    	1: istore_1
+    	2: iload_1
+    	3: iinc          1, 1
+    	6: istore_1
+    	7: getstatic     #2   
+   	10: iload_1
+   	11: invokevirtual #3   
+   	14: return
+
+ 代码2的反编译： 
+	   Code:
+	   0: iconst_0
+	   1: istore_1
+	   2: iinc          1, 1
+	   5: iload_1
+	   6: istore_1
+	   7: getstatic     #2    
+	  10: iload_1
+	  11: invokevirtual #3    
+	  14: return 
+
+   
+
+                  
