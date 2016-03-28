@@ -8,7 +8,8 @@ keywords: java,web1992
 ---
 
 
-### java i++ 与 ++i 的区别
+java i++ 与 ++i 的区别
+---
 
 <!--more-->
 java代码1
@@ -46,15 +47,16 @@ java代码2
 >输出结果 1
 > 
 
-出现这个现象的原因是由java的编译器确定的，即JVM
+出现这个现象的原因是由java的编译器确定的(JVM)
 ---
 > 运行下面命令，查看反编译之后的代码
 >
 > javap -c Test
 >
 
-代码1的反编译：
-
+代码1的反编译
+---
+	{% highlight java %} 
 	Code:
     	0: iconst_0
     	1: istore_1
@@ -62,22 +64,39 @@ java代码2
     	3: iinc          1, 1
     	6: istore_1
     	7: getstatic     #2   
-   	10: iload_1
-   	11: invokevirtual #3   
-   	14: return
+   		10: iload_1
+   		11: invokevirtual #3   
+   		14: return
+	{% endhighlight  %} 
 
  代码2的反编译： 
-	   Code:
-	   0: iconst_0
-	   1: istore_1
-	   2: iinc          1, 1
-	   5: iload_1
-	   6: istore_1
-	   7: getstatic     #2    
-	  10: iload_1
-	  11: invokevirtual #3    
-	  14: return 
-
+---
+	{% highlight java %} 
+	Code:
+	0: iconst_0
+	1: istore_1
+	2: iinc          1, 1
+	5: iload_1
+	6: istore_1
+	7: getstatic     #2    
+	10: iload_1
+	11: invokevirtual #3    
+	14: return 
+	{% endhighlight  %} 
    
 
                   
+反编译之后的代码区别：
+
+![](http://i.imgur.com/zlue6od.png)
+![](http://i.imgur.com/7aBMw2D.png)
+
+
+>代码1先进行load -> inc自增 -> store
+>
+>代码2先进行inc自增 -> load -> store
+>
+>>代码1先load栈中的数据，然后使栈中的数据+1,然后把栈中数据赋值给变量q
+>
+>>代码2先使栈中的数据+1，然后load栈中的数据,然后把栈中数据赋值给变量q
+

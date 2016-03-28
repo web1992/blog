@@ -220,6 +220,8 @@ keywords: java,web1992
 > 未完待续...
 >
 > private native Class<?> makeClass(String name, byte[] data);
+> 
+>
 
 10, 知识准备Method.invoke 使用例子
 ---
