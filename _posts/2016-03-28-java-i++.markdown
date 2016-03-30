@@ -100,7 +100,7 @@ java代码2
 >
 >**Increment local var.**
 
-**iinc 的意思对本地变量进行自增+1，注意这里指的是本地变量 locla var**
+**iinc 的意思对本地变量进行自增+1，注意这里指的是本地变量 local var**
 
 **关于java中栈帧，参照下图：(可自行Google java操作数栈)**
 
