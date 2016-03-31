@@ -128,5 +128,12 @@ vim 效果图
 
 ![](http://i.imgur.com/5qcvHYj.png)
 
+>c代码自动补全
+>
 
+![](http://i.imgur.com/P9irbOV.png)
 
+>java代码自动补全
+>
+
+![](http://i.imgur.com/YISgktP.png)
