@@ -8,11 +8,13 @@ keywords: mysql,web1992
 ---
 
 mysql 表中使用存储过程添加新字段 
+<!--more-->
 ---
 
 	{% highlight sql %}
 	-- 1, 注意SQL 语句开始处不要空格
 	-- 2, 在使用 [--] 进行注释时，后面请加空格
+	
 	SET CHARACTER_SET_CLIENT=utf8;
 	SET CHARACTER_SET_CONNECTION=utf8;
 	drop procedure if exists schema_change;
