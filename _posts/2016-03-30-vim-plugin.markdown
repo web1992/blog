@@ -9,7 +9,19 @@ keywords: vim,web1992
 
 vim 插件
 ---
+
+
+- 安装教程：https://github.com/VundleVim/Vundle.vim
+	>Vundle 是用来管理vim 的一个插件管的工具
+	
+- 自动补全插件：https://github.com/Valloric/YouCompleteMe
+	
 <!--more-->
+>下面的 Plugin 'tomasr/molokai' 可用通过 https://github.com/tomasr/molokai 获取
+>
+>在github上面托管的代码，都有十分详细的安装教程
+>
+
 .vimrc配置
 ---
 	{% highlight sh %}
@@ -137,3 +149,8 @@ vim 效果图
 >
 
 ![](http://i.imgur.com/YISgktP.png)
+
+
+>js代码自动补全
+>
+![](http://i.imgur.com/FYgakKe.png)
