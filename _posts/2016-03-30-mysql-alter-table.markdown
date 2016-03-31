@@ -7,8 +7,10 @@ tags: mysql
 keywords: mysql,web1992
 ---
 
-mysql 表中使用存储过程添加新字段 
+mysql 备忘
 <!--more-->
+
+mysql 表中使用存储过程添加新字段 
 ---
 
 	{% highlight sql %}
