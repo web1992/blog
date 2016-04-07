@@ -96,6 +96,12 @@
         background-color: rgba(#ddd, .1);
         border-radius: 3px;
     }
+	
+    code {
+	    font-family: 'Source Code Pro', Consolas, "Liberation Mono", Courier, monospace;
+	    font-weight: normal;
+	    color: #db4800;
+    }
 
     pre {
         border: 1px solid #ccc;
