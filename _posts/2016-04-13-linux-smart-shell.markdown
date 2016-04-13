@@ -64,6 +64,7 @@ keywords: linux,shell,web1992
 
 		## 函数执行
 		## 找到所有以.sql 结尾的文件
+		## xxx-charid.sql
 		for i in `find  .  -name "*.sql"   |gawk -F'/' '{print $2}'` ; do echo $i;a=`expr $beginId + 1`;beginId=$a;  append $i $a;   done;
 
 		exit;
