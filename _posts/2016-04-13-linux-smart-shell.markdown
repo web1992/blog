@@ -55,7 +55,7 @@ keywords: linux,shell,web1992
 			delete $temp
 			echo "delete suc."
 			
-			replace $oldid newid $file.txt
+			replace $oldid $newid $file.txt
 			echo "replace suc."
 			
 			mysql -uroot -h127.0.0.1 -e "source $file.txt"
