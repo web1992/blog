@@ -7,7 +7,7 @@ tags: linux
 keywords: linux,shell,web1992
 ---
 
-inux shell with sql
+撸下shell 
 ---
 <!--more-->
 	{% highlight sh %}
