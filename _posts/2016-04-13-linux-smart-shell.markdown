@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "linux shell with sql"
-date:  2016-04-12 14:00:00 +0800
+date:  2016-04-13 14:00:00 +0800
 categories: linux
 tags: linux
 keywords: linux,shell,web1992
