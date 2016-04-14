@@ -3,7 +3,8 @@
 #
 # url: http://localhost:4000
 # baseurl: ""
-url: http://www.web1992.cn
+#url: http://www.web1992.cn
+url: http://blog.web1992.cn
 baseurl: ""
 title: 'er妞的博客'
 description: a java programmer.
