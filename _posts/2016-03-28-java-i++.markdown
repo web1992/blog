@@ -8,12 +8,12 @@ keywords: java,web1992
 ---
 
 
-java i++ 与 ++i 的区别
----
+####java i++ 与 ++i 的区别
+
 
 <!--more-->
-java代码1
----
+####java代码1
+
 
 	{% highlight java %}
 	public class Test {
@@ -30,8 +30,8 @@ java代码1
 >输出结果 0
 >
 
-java代码2
----                                                    
+####java代码2
+                                                  
                                                      
         {% highlight java %}                         
         public class Test {                          
@@ -48,15 +48,15 @@ java代码2
 >输出结果 1
 > 
 
-出现这个现象的原因是由java的编译之后的操作码决定的（JVM Opcode Reference）
----
+####出现这个现象的原因是由java的编译之后的操作码决定的（JVM Opcode Reference）
+
 > 运行下面命令，查看反编译之后的操作码（指令码）
 >
 > javap -c Test
 >
 
-代码1的反编译
----
+####代码1的反编译
+
 	{% highlight java %} 
 	Code:
     	0: iconst_0
@@ -70,8 +70,8 @@ java代码2
    		14: return
 	{% endhighlight  %} 
 
- 代码2的反编译： 
----
+####代码2的反编译： 
+
 	{% highlight java %} 
 	Code:
 	0: iconst_0
