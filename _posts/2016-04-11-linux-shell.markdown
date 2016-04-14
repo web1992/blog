@@ -7,8 +7,8 @@ tags: linux
 keywords: linux,,shell,web1992
 ---
 
-linux 自动重启服务命令
----
+###linux 自动重启服务命令
+
 <!--more-->
 	{% highlight sh %}
 		#!/bin/bash

@@ -8,7 +8,7 @@ keywords: linux,web1992
 ---
 
 
-## linux `diff` 命令备忘
+### linux `diff` 命令备忘
 
 man diff 的文档帮助说明: 
 ----

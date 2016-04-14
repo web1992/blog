@@ -33,6 +33,8 @@ keywords: linux,web1992
 	lcd /data/www/
 	put $_file
 	put MD5.txt
+	# put  上传文件到ftp
+	# get  取文件到当前目录
 	bye
 	!
 	{% endhighlight %}

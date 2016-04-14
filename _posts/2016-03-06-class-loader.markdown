@@ -31,8 +31,8 @@ keywords: java,web1992
 
 [10,其他](10)
 
-1,类加载器
----
+###1,类加载器
+
 
 - 引导类加载器 bootstrap
 - 扩展类加载器 extension
@@ -42,11 +42,11 @@ keywords: java,web1992
 <!--more-->
 
 2,类加载器的层次结构
----
+###
 ![](http://i.imgur.com/l2Qgtuz.png)
 
 3,Class对象的创建过程
----
+###
 - `.java` 文件-> `.class` 文件
 - `.class` 文件 -> `byte[]` 数组
 - `byte[]` -> Clazz 对象
@@ -63,7 +63,7 @@ keywords: java,web1992
 	{% endhighlight %}
 
 4,根据java规范（约定）编写自己的`ClassLoader`
----
+###
 
 	{% highlight java %}
 	  // 网络类加载器子类必须定义方法 findClass 和 loadClassData，以实现从网络加载类。
@@ -85,7 +85,7 @@ keywords: java,web1992
 	{% endhighlight %}
 	
 5, 对自己的`.class` 文件进行解密&解密
----
+###
 
 - 读取自己的 `.class` 文件
 - byte[] readClassFile(String File)// 读取已经编译好的class文件
@@ -95,7 +95,7 @@ keywords: java,web1992
 - Class<?> defineClass(String name, byte[] b, int off, int len) //生成Class对象
 
 6,问题思考
----
+###
 > 我们的代码最终会放到服务器上，进行运行,那么必须对我们的代码进行解密->运行
 >
 > 如果用人通过一定手段，获取了你的加密算法，那么很容易对你的程序进行解密
@@ -107,7 +107,7 @@ keywords: java,web1992
 > 这样就获得了源码。
 
 7,问题解决
----
+###
 - 对3中自定义的 MyClassLoader 进行优化
 
 - 读取自己的 `.class` 文件
@@ -129,7 +129,7 @@ keywords: java,web1992
 这样对于 byte[] 对象的解密过程就隐藏起来了
 
 8,java jni 
----
+###
 使用java jni 技术，调用c/c++ 方法，对 byte[] 进行解密，并创建Class对象，返还给java程序
 
 - 定义一个 native 方法
@@ -216,7 +216,7 @@ keywords: java,web1992
 >
 
 9, 使用c/c++编写实现自己的ClassLoader
----
+###
 > 未完待续...
 >
 > private native Class<?> makeClass(String name, byte[] data);
@@ -224,7 +224,7 @@ keywords: java,web1992
 >
 
 10, 知识准备Method.invoke 使用例子
----
+###
 
 
 	{% highlight java %}

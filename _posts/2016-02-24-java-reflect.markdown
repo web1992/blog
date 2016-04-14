@@ -7,7 +7,7 @@ tags: java
 keywords: java,web1992
 ---
 
-## java 反射例子
+### java 反射例子
 > 一个java反射使用例子，备忘
 > 
 > 使用反射改变对象私有变量的值

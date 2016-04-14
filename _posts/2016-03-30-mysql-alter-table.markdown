@@ -11,8 +11,8 @@ mysql 备忘
 ---
 <!--more-->
 
-mysql 表中使用存储过程添加新字段 
----
+###mysql 表中使用存储过程添加新字段 
+
 
 	{% highlight sql %}
 	-- 1, 注意SQL 语句开始处不要空格
@@ -34,8 +34,8 @@ mysql 表中使用存储过程添加新字段
 
 	{% endhighlight %}
 
-mysql 删除表
----
+###mysql 删除表
+
 	{% highlight sql %}
 	DROP TABLE IF EXISTS `t_my_table`;
 	{% endhighlight %}

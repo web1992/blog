@@ -2,7 +2,7 @@
 layout: post
 title:  "使用 python 连接mysql 数据库"
 date:  2016-02-04 14:33:00 +0800
-categories: phthon
+categories: python
 tags: python
 keywords: jekyll,web1992
 ---

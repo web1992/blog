@@ -125,8 +125,8 @@ vim 插件
 
 	{% endhighlight %}
 
-vim 效果图
----
+###vim 效果图
+
 参考教材：
 [http://www.open-open.com/lib/view/open1429884437588.html](http://www.open-open.com/lib/view/open1429884437588.html)
 
