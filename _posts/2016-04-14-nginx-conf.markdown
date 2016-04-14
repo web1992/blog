@@ -48,24 +48,19 @@ keywords: nginx,web1992
 	server
 	{
 		listen 80;
-		server_name ~^(.+)?\.web1992\.cn$;
+		server_name gradle.web1992.cn;
 		index userguide.html;
-		if ($host = gradle){
-			rewrite ^ http://www.web1992.cn permanent;
-		}
 		root /usr/local/gradle/docs/userguide/;
 	}
-	#server块的最后部分是location指令块，对于client的不同请求目标，location是用来配置服务器的不同响应。
-	#就像server_name指令配置nginx处理请求使用包含在请求中的信息一样，location指令配置如何响应不同位置资源的请求
+	#server块的最后部分是location指令块，对于client的不同请求目标，
+	#location是用来配置服务器的不同响应。
+	#就像server_name指令配置nginx处理请求使用包含在请求中的信息一样
+	#location指令配置如何响应不同位置资源的请求
 	server
 	{
 		listen 80;
-
 		server_name  groovy.web1992.cn
 		index index.html;
-		if ($host = groovy){
-			rewrite ^ http://www.web1992.cn permanent;
-		}
 		root /data/www/groovy-2.4.6/html/documentation/;
 	}
 	{% endhighlight %}
