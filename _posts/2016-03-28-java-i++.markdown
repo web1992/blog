@@ -20,7 +20,7 @@ keywords: java,web1992
 
 	   public static void main(String[] args) {
 
-		        int q = 0;
+		    int q = 0;
 			q = q++;
 			System.out.println(q);
 	  }
