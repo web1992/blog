@@ -8,6 +8,7 @@ url: http://blog.web1992.cn
 baseurl: ""
 title: 'er妞的博客'
 description: a java programmer.
+#description: 'web1992.cn'
 avatar: /assets/img/ogp.png
 # language: ja
 language: en
