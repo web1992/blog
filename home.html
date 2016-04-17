@@ -260,13 +260,14 @@
     function backgroundImage() {
         var pub_img_path = 'http://www.web1992.cn/images_pub/';
 
-        var pub_img_num = 16;
+        var pub_img_num = 28;
 
         var pub_img_current_no = function () {
             return Math.floor(Math.random() * pub_img_num + 1);
         };
 
         var pub_img_url = function () {
+	    console.log("num="+pub_img_current_no())
             return pub_img_path + 'pub_' + pub_img_current_no() + '.jpg';
         };
 

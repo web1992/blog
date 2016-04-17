@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "procejt develop summary"
+title:  "project develop summary"
 date:  2016-01-14 8:42:00 +0800
-categories: procejt
-tags: procejt
-keywords: procejt,Jekyll,web1992
+categories: project
+tags: project
+keywords: project,Jekyll,web1992
 ---
 
 
-> procejt develop summary (项目开发总结)
+> project develop summary (项目开发总结)
 > 
 
 <!--more-->
