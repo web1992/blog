@@ -70,3 +70,7 @@ keywords: linux,shell,web1992
 		exit;
 
 	{% endhighlight %}
+
+> 解析shell的网站
+>
+> http://explainshell.com/

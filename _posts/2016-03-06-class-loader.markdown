@@ -226,13 +226,16 @@ keywords: java,web1992
 >jvm  源码ClassLoader.c 中 有一个 Java_java_lang_ClassLoader_defineClass1 方法
 >
 >对应这java ClassLoader中 
->
+
 >from Java
 
 	{% highlight c++ %}
 	private native Class defineClass1(String name, byte[] b, int off, int len, ProtectionDomain pd, String source, boolean verify);
 	{% endhighlight %}
-	
+
+>jdk7 源码下载地址:https://jdk7.java.net/source.html	
+>hg下载:http://hg.openjdk.java.net/jdk7u/jdk7u/
+>
 >form C++
 
 	{% highlight c++ %}
@@ -247,7 +250,7 @@ keywords: java,web1992
 											jstring source)
 	{% endhighlight %}
 
-> C++ 源码具体实现
+> C++ 源码具体实现 
 
 	{% highlight c++ %}
 	JNIEXPORT jclass JNICALL
@@ -260,70 +263,7 @@ keywords: java,web1992
 											jobject pd,
 											jstring source)
 	{
-		jbyte *body;
-		char *utfName;
-		jclass result = 0;
-		char buf[128];
-		char* utfSource;
-		char sourceBuf[1024];
-
-		if (data == NULL) {
-			JNU_ThrowNullPointerException(env, 0);
-			return 0;
-		}
-
-		/* Work around 4153825. malloc crashes on Solaris when passed a
-		 * negative size.
-		 */
-		if (length < 0) {
-			JNU_ThrowArrayIndexOutOfBoundsException(env, 0);
-			return 0;
-		}
-
-		body = (jbyte *)malloc(length);
-
-		if (body == 0) {
-			JNU_ThrowOutOfMemoryError(env, 0);
-			return 0;
-		}
-
-		(*env)->GetByteArrayRegion(env, data, offset, length, body);
-
-		if ((*env)->ExceptionOccurred(env))
-			goto free_body;
-
-		if (name != NULL) {
-			utfName = getUTF(env, name, buf, sizeof(buf));
-			if (utfName == NULL) {
-				JNU_ThrowOutOfMemoryError(env, NULL);
-				goto free_body;
-			}
-			VerifyFixClassname(utfName);
-		} else {
-			utfName = NULL;
-		}
-
-		if (source != NULL) {
-			utfSource = getUTF(env, source, sourceBuf, sizeof(sourceBuf));
-			if (utfSource == NULL) {
-				JNU_ThrowOutOfMemoryError(env, NULL);
-				goto free_utfName;
-			}
-		} else {
-			utfSource = NULL;
-		}
-		result = JVM_DefineClassWithSource(env, utfName, loader, body, length, pd, utfSource);
-
-		if (utfSource && utfSource != sourceBuf)
-			free(utfSource);
-
-	 free_utfName:
-		if (utfName && utfName != buf)
-			free(utfName);
-
-	 free_body:
-		free(body);
-		return result;
+		// code ..
 	}
 	{% endhighlight %}
 
