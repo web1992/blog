@@ -11,14 +11,13 @@ windows 常用命令
 
 <!--more-->
 
-	{% highlight sh %}
-		netstat -ano  |findstr 3306
-		netstat -ano  |3306
+	{% highlight bat %}
+	netstat -ano  |findstr 3306
 		
-		tasklist
-		tasklist |findstr mysql
+	tasklist
+	tasklist |findstr mysql
 		
-		taskkill /T /F /PID 6376
-		## /T 所有子进程
-		## /F 强制杀
+	taskkill /T /F /PID 6376
+	## /T 所有子进程
+	## /F 强制杀
 	{% endhighlight %}
