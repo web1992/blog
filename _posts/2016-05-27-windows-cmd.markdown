@@ -12,6 +12,7 @@ windows 常用命令
 <!--more-->
 
 	{% highlight bat %}
+
 	netstat -ano  |findstr 3306
 		
 	tasklist
