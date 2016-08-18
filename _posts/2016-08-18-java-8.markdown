@@ -11,15 +11,14 @@ keywords: java,web1992
 
 <!--more-->
 
-参考的教程
---
+>参考的教程
+>
+
+http://www.cnblogs.com/davidwang456/p/4760559.html
 
 
-[java8教程](http://www.cnblogs.com/davidwang456/p/4760559.html)
-
-
-先看一段代码
---
+>先看一段代码
+>
 	
 {% highlight java %}
 
@@ -86,49 +85,49 @@ parallelStream 多线程,当数据较多的时候，可以采用此
 stream 单线程
 
 
-常用的方法
---
+>常用的方法
+>
 
-map
+	map
+	
+	filter
+	
+	forEach
+	
+	sorted
+	
+	collect
+	
+	>Collect is an extremely useful terminal operation to transform
+	> 
+	>the elements of the stream into a different kind of >result, e.g. a List, Set or Map
 
-filter
 
-forEach
+>其他常用的方法
+>
 
-sorted
+	flatMap
+	
+	anyMatch
+	
+	noneMatch
+	
+	mapToInt
+	
+	mapToObj
+	
+	ifPresent
 
-collect
-
->Collect is an extremely useful terminal operation to transform
-> 
->the elements of the stream into a different kind of >result, e.g. a List, Set or Map
-
-
-其他常用的方法
---
-
-flatMap
-
-anyMatch
-
-noneMatch
-
-mapToInt
-
-mapToObj
-
-ifPresent
-
-函数式接口
---
+>函数式接口
+>
 	
 
-supplier 	// 供应者
-
-accumulator // 积聚者
-
-combiner 	// 组合器
-
-finisher	// 整理工
+	supplier 	// 供应者
+	
+	accumulator // 积聚者
+	
+	combiner 	// 组合器
+	
+	finisher	// 整理工
 
 
