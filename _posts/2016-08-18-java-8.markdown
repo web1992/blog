@@ -15,7 +15,7 @@ keywords: java,web1992
 --
 
 
-[java8教程][java8]
+[java8教程](http://www.cnblogs.com/davidwang456/p/4760559.html)
 
 
 先看一段代码
@@ -132,4 +132,3 @@ combiner 	// 组合器
 finisher	// 整理工
 
 
-[java8]:http://www.cnblogs.com/davidwang456/p/4760559.html
