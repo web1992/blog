@@ -78,6 +78,8 @@ http://www.cnblogs.com/davidwang456/p/4760559.html
 >
 >但实际是，打印filter1，再打印filter2 说明整个循环只执行了一次,效率并不低
 
+
+ 
 >parallelStream() 与  stream()
 >
  

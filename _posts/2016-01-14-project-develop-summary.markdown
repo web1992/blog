@@ -89,6 +89,14 @@ keywords: project,Jekyll,web1992
 > 
 
 
+- 系统的特点
+
+> 高可用系统(银行系统等)
+>
+> 稳定性，安全性，基本可用性（类似管理后台）
+> 
+> [高可用系统](http://coolshell.cn/articles/17459.html#more-17459)
+
 
 [#v1]:#v1
 [#v2]:#v2
