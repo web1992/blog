@@ -15,6 +15,7 @@ keywords: node,web1992
 - [node 安装][#node_install]
 - [npm 是什么][#npm]
 - [npm 安装][#npm_install]
+- [cnpm][#cnpm]
 - [bower 是什么][#bower]
 - [bower 安装][#bower_install]
 - [gulp 是什么][#gulp]
@@ -66,6 +67,9 @@ npm 官网地址 https://www.npmjs.com/
 
 ![](http://i.imgur.com/omBd0PE.jpg)
 
+###cnpm 
+
+[npm镜像，解决npm慢的问题](https://npm.taobao.org/)
 
 <a herf="#bower"> </a>
 ###bower 是什么
@@ -120,30 +124,6 @@ npm 官网地址 https://www.npmjs.com/
 ![](http://i.imgur.com/O1WYvrG.jpg)
 
 
-<a herf="#git"> </a>
-###git 是什么
-
-> 代码版本管理工具，类似svn
-
-<a herf="#git_install"> </a>
-###git_install 安装
-
-就是一个exe文件安装即可
-
-> git 常用的命令
->
-
-```
-git config --global user.email 
-
-git config --global user.name 
-
-git config --list
- 
-git clone ssh@git [这是你项目的地址]
-
-```
-
 
 ###browsersync 浏览器实时刷新
 
@@ -154,6 +134,7 @@ git clone ssh@git [这是你项目的地址]
 [#node_install]:#node_install
 [#npm]:#npm
 [#npm_install]:#npm_install
+[#cnpm]:#cnpm
 [#bower]:#bower
 [#bower_install]:#bower_install
 [#gulp]:#gulp
