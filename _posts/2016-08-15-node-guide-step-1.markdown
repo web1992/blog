@@ -20,8 +20,6 @@ keywords: node,web1992
 - [bower 安装][#bower_install]
 - [gulp 是什么][#gulp]
 - [gulp 安装][#gulp_install]
-- [git 是什么][#git]
-- [git 安装][#git_install]
 - [browsersync][#browsersync]
 
 
