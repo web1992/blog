@@ -11,28 +11,17 @@ keywords: node,web1992
 
 <!--more-->
 
-[node 是什么][#node_what_is]
-
-[node 安装][#node_install]
-
-[npm 是什么][#npm]
-
-[npm 安装][#npm_install]
-
-[bower 是什么][#bower]
-
-[bower 安装][#bower_install]
-
-[gulp 是什么][#gulp]
-
-[gulp 安装][#gulp_install]
-
-
-[git 是什么][#git]
-
-[git 安装][#git_install]
-
-[browsersync][#browsersync]
+- [node 是什么][#node_what_is]
+- [node 安装][#node_install]
+- [npm 是什么][#npm]
+- [npm 安装][#npm_install]
+- [bower 是什么][#bower]
+- [bower 安装][#bower_install]
+- [gulp 是什么][#gulp]
+- [gulp 安装][#gulp_install]
+- [git 是什么][#git]
+- [git 安装][#git_install]
+- [browsersync][#browsersync]
 
 
 
@@ -156,7 +145,7 @@ git clone ssh@git [这是你项目的地址]
 ```
 
 
-##browsersync 浏览器实时刷新
+###browsersync 浏览器实时刷新
 
 [省时的浏览器同步测试工具](http://www.browsersync.cn/)
 
