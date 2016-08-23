@@ -15,11 +15,11 @@ keywords: java,web1992
 >参考的教程
 >
 
-http://www.cnblogs.com/davidwang456/p/4760559.html
+- [博客园](http://www.cnblogs.com/davidwang456/p/4760559.html)
+- [IMB](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
 
+###先看一段代码
 
->先看一段代码
->
 	
 {% highlight java %}
 
@@ -88,8 +88,8 @@ http://www.cnblogs.com/davidwang456/p/4760559.html
 	stream 单线程
 
 
->常用的方法
->
+###常用的方法
+
 
 	map
 	
@@ -106,8 +106,8 @@ http://www.cnblogs.com/davidwang456/p/4760559.html
 	the elements of the stream into a different kind of >result, e.g. a List, Set or Map
 
 
->其他常用的方法
->
+###其他常用的方法
+
 
 	flatMap
 	
@@ -121,8 +121,7 @@ http://www.cnblogs.com/davidwang456/p/4760559.html
 	
 	ifPresent
 
->函数式接口
->
+###函数式接口
 	
 
 	supplier 	// 供应者
