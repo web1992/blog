@@ -32,10 +32,12 @@ keywords: node,web1992
 
 [git 安装][#git_install]
 
+[browsersync][#browsersync]
+
 
 
 <a herf="#node_what_is"> </a>
-##node_what_is 是什么
+###node_what_is 是什么
 
 来自官网首页的描述
 >Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
@@ -46,7 +48,7 @@ keywords: node,web1992
 >
 
 <a herf="#node_install"> </a>
-##node_install 安装
+###node_install 安装
 
 >下载地址：https://nodejs.org/en/
 >
@@ -58,7 +60,7 @@ window下cmd输入 `node -v` 出现如下内容，则说明node安装成功
 
 
 <a herf="#npm"> </a>
-##npm 是什么
+###npm 是什么
 
 npm 官网地址 https://www.npmjs.com/
 
@@ -69,7 +71,7 @@ npm 官网地址 https://www.npmjs.com/
 
 
 <a herf="#node_install"> </a>
-##npm_install 安装
+###npm_install 安装
 
 最新版本的node已经集成了npm, 输入 `npm -v`,出现如下内容，则说明npm安装成功
 
@@ -77,7 +79,7 @@ npm 官网地址 https://www.npmjs.com/
 
 
 <a herf="#bower"> </a>
-##bower 是什么
+###bower 是什么
 
 官网地址：https://bower.io/
 
@@ -90,7 +92,7 @@ npm 官网地址 https://www.npmjs.com/
 博客教程：http://www.cnblogs.com/CraryPrimitiveMan/p/3695518.html
 
 <a herf="#bower_install"> </a>
-##bower_install 安装
+###bower_install 安装
 
 `npm install -g bower`
 
@@ -102,7 +104,7 @@ npm 官网地址 https://www.npmjs.com/
 
 
 <a herf="#bower"> </a>
-##gulp 是什么
+###gulp 是什么
 
 官网地址：http://www.gulpjs.com.cn/
 
@@ -114,7 +116,7 @@ npm 官网地址 https://www.npmjs.com/
 
 
 <a herf="#bower_install"> </a>
-##gulp_install 安装
+###gulp_install 安装
 
 `npm install gulp -g`
 
@@ -130,12 +132,12 @@ npm 官网地址 https://www.npmjs.com/
 
 
 <a herf="#git"> </a>
-##git 是什么
+###git 是什么
 
 > 代码版本管理工具，类似svn
 
 <a herf="#git_install"> </a>
-##git_install 安装
+###git_install 安装
 
 就是一个exe文件安装即可
 
@@ -153,6 +155,12 @@ git clone ssh@git [这是你项目的地址]
 
 ```
 
+
+##browsersync 浏览器实时刷新
+
+[省时的浏览器同步测试工具](http://www.browsersync.cn/)
+
+
 [#node_what_is]:#node_what_is
 [#node_install]:#node_install
 [#npm]:#npm
@@ -161,8 +169,9 @@ git clone ssh@git [这是你项目的地址]
 [#bower_install]:#bower_install
 [#gulp]:#gulp
 [#gulp_install]:#gulp_install
-[#git]:#git_what_is
+[#git]:#git
 [#git_install]:#git_install
+[#browsersync]:#browsersync
 
 
 
