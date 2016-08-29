@@ -15,7 +15,9 @@ keywords: java,web1992
 >参考的教程
 >
 
-[[csdn]](http://blog.csdn.net/zhangerqing/article/details/8239539)
+- [[csdn1]](http://blog.csdn.net/zhangerqing/article/details/8194653)
+- [[csdn2]](http://blog.csdn.net/zhangerqing/article/details/8239539)
+- [[csdn3]](http://blog.csdn.net/zhangerqing/article/details/8243942)
 
 > 设计模式具体的解释，可见博客文章
 > 
