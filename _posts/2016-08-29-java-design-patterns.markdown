@@ -15,7 +15,7 @@ keywords: java,web1992
 >参考的教程
 >
 
-[[iteye]](http://zz563143188.iteye.com/blog/1847029)
+[[csdn]](http://blog.csdn.net/zhangerqing/article/details/8239539)
 
 > 设计模式具体的解释，可见博客文章
 > 
