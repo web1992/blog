@@ -10,7 +10,8 @@ $side-padding: 10px;
 
 .site-header {
     width: 100%;
-    background: url(/assets/img/bg.png);
+    //background: url(/assets/img/bg.png);
+    background: url(/blog/assets/img/bg.png);
     .inner {
         width: $site-max-width;
         margin: 0 auto;

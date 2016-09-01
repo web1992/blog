@@ -5,7 +5,7 @@
 # baseurl: ""
 #url: http://www.web1992.cn
 url: http://blog.web1992.cn
-baseurl: ""
+baseurl: "/blog"
 title: 'er的博客'
 description: a java programmer.
 #description: 'web1992.cn'
