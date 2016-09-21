@@ -17,7 +17,9 @@ keywords: linux,web1992,curl
 
 这次尝试使用`curl`发送head为json格式的请求，下面是学习备注：
 
-提供一个发送http请求的chrome 插件 [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-app-launcher-info-dialog)
+>提供一个发送http请求的chrome 插件 [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-app-launcher-info-dialog)
+
+![](https://i.imgur.com/I8g9doo.jpg)
 
 >参考的教程
 
