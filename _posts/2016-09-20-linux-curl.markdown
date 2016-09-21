@@ -12,6 +12,12 @@ keywords: linux,web1992,curl
 
 <!--more-->
 
+最近在调试`http`接口时，需要自己模拟数据请求接口，由于接口的`请求参数格式`和`返回值格式`都是`json`
+
+这次尝试使用`curl`发送head为json格式的请求，下面是学习备注：
+
+提供一个发送http请求的chrome 插件 [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-app-launcher-info-dialog)
+
 >参考的教程
 >
 
