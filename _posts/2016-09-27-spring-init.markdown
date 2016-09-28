@@ -96,11 +96,14 @@ keywords: spring,web1992,spring mvc
 
 
 > `ContextLoaderListener`只是一个对外暴露的实现类，
-> 具体的实现是在 `ContextLoader` 中
-> `ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean
-> `ContextLoader.properties` 配置了默认的 bean 加载类
 >
-> org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
+> 具体的实现是在 `ContextLoader` 中
+>
+> `ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean
+>
+> `ContextLoader.properties` 配置了默认的 bean 加载类,如下：
+
+	org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
 
 > ContextLoaderListener 类的继承关系
@@ -112,11 +115,8 @@ keywords: spring,web1992,spring mvc
 参考的文章：
 
 [参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
-
 [参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
-
 [参考3](http://www.cnblogs.com/hellojava/archive/2012/12/26/2833840.html)
-
 [参考4-filter](http://tianweili.github.io/blog/2015/01/26/java-filter/)
 
 
