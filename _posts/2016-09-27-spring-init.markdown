@@ -15,9 +15,21 @@ keywords: spring,web1992,spring mvc
 
 <!--more-->
 
->`DispatcherServlet`的作用：
+1.[DispatcherServlet 的作用]()
 
->在 `DispatcherServlet javadoc` 中有这句话
+2.[DispatcherServlet 的初始化]()
+
+3.[DispatcherServlet 的配置]()
+
+4.[ContextLoaderListener 配置]()
+
+5.[ContextLoaderListener 的作用]()
+
+
+`DispatcherServlet`的作用：
+----
+
+在 `DispatcherServlet javadoc` 中有这句话
 
 	Central dispatcher for HTTP request handlers/controllers, e.g. for web UI controllers or HTTP-based remote service
 	exporters. Dispatches to registered handlers for processing a web request, providing convenient mapping and exception
@@ -26,7 +38,9 @@ keywords: spring,web1992,spring mvc
 	Central dispatcher // DispatcherServlet是一个调度中心，主要处理http请求，url映射，异常处理等
 	
 
-> DispatcherServlet 的初始化：
+
+`DispatcherServlet` 的初始化：
+---
 
 > DispatcherServlet 是一个`servlet` 继承了我们熟悉的 `HttpServlet`
 > 它的初始化时在web容器创建时进行的，如果配置了 Filter，可以看到如下日志
@@ -49,7 +63,9 @@ keywords: spring,web1992,spring mvc
 	4,初始化 dispatcherServlet 
 	5,web 容器启动完成
 
-> DispatcherServlet 的配置：
+`DispatcherServlet` 的配置：
+---
+
 
 		<servlet>
 	        <servlet-name>dispatcherServlet</servlet-name>
@@ -80,7 +96,9 @@ keywords: spring,web1992,spring mvc
 
 
 
-> ContextLoaderListener 配置：
+`ContextLoaderListener`配置：
+---
+
 
 	<!-- spring 配置文件 -->
 	<context-param>
@@ -94,19 +112,22 @@ keywords: spring,web1992,spring mvc
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+`ContextLoaderListener` 的作用
+---
 
-> `ContextLoaderListener`只是一个对外暴露的实现类，
->
-> 具体的实现是在 `ContextLoader` 中
->
-> `ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean
->
-> `ContextLoader.properties` 配置了默认的 bean 加载类,如下：
+	 `ContextLoaderListener`只是一个对外暴露的实现类，
+	
+	 具体的实现是在 `ContextLoader` 中
+	
+	 `ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean
+	
+	 `ContextLoader.properties` 配置了默认的 bean 加载类,如下：
 
-	org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
+	 org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
 
-> ContextLoaderListener 类的继承关系
+`ContextLoaderListener` 类的继承关系
+---
 
 ![](http://i.imgur.com/0mWshgN.jpg)
 
@@ -115,8 +136,11 @@ keywords: spring,web1992,spring mvc
 参考的文章：
 
 [参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
+
 [参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
+
 [参考3](http://www.cnblogs.com/hellojava/archive/2012/12/26/2833840.html)
+
 [参考4-filter](http://tianweili.github.io/blog/2015/01/26/java-filter/)
 
 
