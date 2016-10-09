@@ -7,26 +7,23 @@ tags: spring
 keywords: spring,web1992,spring mvc
 ---
 
-> `spring mvc` `DispatcherServlet` `ContextLoaderListener` 以及`Filter` 总结
-> 
-> 最近在使用`spring mvc` 进行web项目的开发
-> 
-> 以前只是会用，这次对使用中`疑惑的地方`进行下总结
+`spring mvc` `DispatcherServlet` `ContextLoaderListener` 以及`Filter` 总结
+ 
+最近在使用`spring mvc` 进行web项目的开发
+
+以前只是会用，这次对使用中`疑惑的地方`进行下总结
+
 
 <!--more-->
 
-1.[DispatcherServlet 的作用]()
+- 1.[DispatcherServlet 的作用]()
+- 2.[DispatcherServlet 的初始化]()
+- 3.[DispatcherServlet 的配置]()
+- 4.[ContextLoaderListener 配置]()
+- 5.[ContextLoaderListener 的作用]()
+- 6.[ContextLoaderListener类的继承关系]()
 
-2.[DispatcherServlet 的初始化]()
-
-3.[DispatcherServlet 的配置]()
-
-4.[ContextLoaderListener 配置]()
-
-5.[ContextLoaderListener 的作用]()
-
-
-`DispatcherServlet`的作用：
+1.`DispatcherServlet`的作用：
 ----
 
 在 `DispatcherServlet javadoc` 中有这句话
@@ -39,7 +36,7 @@ keywords: spring,web1992,spring mvc
 	
 
 
-`DispatcherServlet` 的初始化：
+2.`DispatcherServlet` 的初始化：
 ---
 
 > DispatcherServlet 是一个`servlet` 继承了我们熟悉的 `HttpServlet`
@@ -63,7 +60,7 @@ keywords: spring,web1992,spring mvc
 	4,初始化 dispatcherServlet 
 	5,web 容器启动完成
 
-`DispatcherServlet` 的配置：
+3.`DispatcherServlet` 的配置：
 ---
 
 
@@ -92,11 +89,11 @@ keywords: spring,web1992,spring mvc
 >
 > 实线的箭头是继承`extends`，虚线的箭头是类的实现`implements`
 
-![](http://i.imgur.com/h3o9bYP.jpg)
+![](https://i.imgur.com/h3o9bYP.jpg)
 
 
 
-`ContextLoaderListener`配置：
+4.`ContextLoaderListener`配置：
 ---
 
 
@@ -112,7 +109,7 @@ keywords: spring,web1992,spring mvc
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-`ContextLoaderListener` 的作用
+5.`ContextLoaderListener` 的作用
 ---
 
 	 `ContextLoaderListener`只是一个对外暴露的实现类，
@@ -126,10 +123,10 @@ keywords: spring,web1992,spring mvc
 	 org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
 
-`ContextLoaderListener` 类的继承关系
+6.`ContextLoaderListener` 类的继承关系
 ---
 
-![](http://i.imgur.com/0mWshgN.jpg)
+![](https://i.imgur.com/0mWshgN.jpg)
 
 
 
