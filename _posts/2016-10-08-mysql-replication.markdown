@@ -104,7 +104,7 @@ keywords: mysql,web1992
 7.slave开始复制数据，如果master 已经有数据了
 
 - a).使用 --skip-slave-start 启动slave，
-- b).导入dump 文件 shell> mysql < fulldb.dump
+- b).导入dump 文件 `mysql < fulldb.dump`
 - c).执行`第8步`
 - d).执行 `START SLAVE;` 开始主从复制
 
