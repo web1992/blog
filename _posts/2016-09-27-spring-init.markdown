@@ -135,13 +135,10 @@ keywords: spring,web1992,spring mvc
 
 参考的文章：
 
-[参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
-
-[参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
-
-[参考3](http://www.cnblogs.com/hellojava/archive/2012/12/26/2833840.html)
-
-[参考4-filter](http://tianweili.github.io/blog/2015/01/26/java-filter/)
+- [参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
+- [参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
+- [参考3](http://www.cnblogs.com/hellojava/archive/2012/12/26/2833840.html)
+- [参考4-filter](http://tianweili.github.io/blog/2015/01/26/java-filter/)
 
 
 
