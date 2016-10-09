@@ -94,6 +94,7 @@ keywords: mysql,web1992
 	[mysqld]
 	server-id=2
 	log-bin=mysql-bin
+	skip-slave-start
 
 	
 	
