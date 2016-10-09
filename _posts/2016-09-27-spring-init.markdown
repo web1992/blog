@@ -7,10 +7,11 @@ tags: spring
 keywords: spring,web1992,spring mvc
 ---
 
-`spring mvc` `DispatcherServlet` `ContextLoaderListener` 以及`Filter` 总结
-最近在使用`spring mvc` 进行web项目的开发
-以前只是会用，这次对使用中`疑惑的地方`进行下总结
+> `spring mvc` `DispatcherServlet` `ContextLoaderListener` 以及`Filter` 总结
+> 最近在使用`spring mvc` 进行web项目的开发
+> 以前只是会用，这次对使用中`疑惑的地方`进行下总结
 
+----------
 
 <!--more-->
 
