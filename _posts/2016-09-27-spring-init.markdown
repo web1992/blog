@@ -116,18 +116,16 @@ keywords: spring,web1992,spring mvc
 <a name="v5"></a>
 5.`ContextLoaderListener` 的作用
 ---
-`ContextLoaderListener` 继承了 `ServletContextListener`
+`ContextLoaderListener` 继承了 `ServletContextListener`代码如下：
 
 	public class ContextLoaderListener extends ContextLoader implements ServletContextListener {
+	// ...	
+	}
 
 
-`ContextLoaderListener`只是一个对外暴露的实现类，
+`ContextLoaderListener`只是一个对外暴露的实现类，具体的实现是在 `ContextLoader` 中
 	
-具体的实现是在 `ContextLoader` 中
-	
-`ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean
-	
-`ContextLoader.properties` 配置了默认的 bean 加载类,如下：
+`ContextLoader` 使用 默认的 `XmlWebApplicationContext` 加载Bean,`ContextLoader.properties` 配置了默认的 bean 加载类,如下：
 
 	org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
