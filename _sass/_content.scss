@@ -29,8 +29,10 @@
     p,li{
 	    font-family: "Microsoft YaHei" ! important;// Courier, monospace;
     }
+
     li{
     	//background: #eee;
+	font-size: 0.9em;
     }
     blockquote {
 	font-family:'Source Code Pro', Consolas, "Liberation Mono", Courier, monospace;
@@ -60,7 +62,9 @@
     p, ol, ul, dl, table, blockquote, kbd, pre, samp {
         margin: 1.5em 0;
     }
-
+    p{
+      margin: 0.6em 0;
+    }
     ul, ol {
         padding-left: 1em;
         ul, ol {

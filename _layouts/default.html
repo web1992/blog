@@ -56,6 +56,9 @@
     -->
 
     <link href="{{ '/assets/css/style.css' | prepend: site.baseurl }}" rel="stylesheet">
+    <!--
+    -->
+    <link href="{{ '/assets/css/top/style.css' | prepend: site.baseurl }}" rel="stylesheet">
 </head>
 <body>
 
@@ -107,6 +110,9 @@
                     {% endfor %}
                 </ul>
             </div>
+	    <div>
+		    <a href="#0" class="cd-top">Top</a>
+	    </div>
         </div>
     </aside>
 </div>
@@ -122,6 +128,7 @@
 <script src="//web1992.cn/blog/assets/js/jquery/jquery-3.1.0.min.js"></script>
 <script src="{{ '/assets/lib/garand-sticky/jquery.sticky.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/assets/js/script.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/top/main.js' | prepend: site.baseurl }}"></script>
 
 {% if page.id %}
 <script src="{{ '/assets/js/header-link.js' | prepend: site.baseurl }}"></script>
