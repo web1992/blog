@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "mysql replication(mysql主从复制)"
+title:  "mysql replication-主从复制"
 date:  2016-10-08 13:33:00 +0800
 categories: mysql
 tags: mysql
