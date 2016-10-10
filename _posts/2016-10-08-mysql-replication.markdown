@@ -227,7 +227,7 @@ keywords: mysql,web1992
 
 ----------
 12.参考的文档：<a name="v12"></a>
-
+-----
 [mysql replication(官网文档)](http://dev.mysql.com/doc/refman/5.7/en/replication.html)
 
 
