@@ -11,10 +11,10 @@ linux screen的使用
 
 <!--more-->
 
-[使用技巧1](http://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html "使用技巧")
+--------
 
-
-[使用技巧2，如何写日志](http://www.linuxidc.com/Linux/2014-09/106217.htm "使用技巧")
+- [screen使用技巧](http://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html "使用技巧")
+- [screen如何写日志](http://www.linuxidc.com/Linux/2014-09/106217.htm "使用技巧")
 
 sh 中使用screen
 
