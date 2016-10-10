@@ -8,6 +8,6 @@ share: false
 
 <ul class="inline">
     {% for tag in site.tags %}
-    <li><a href="{{ '/search/?t=' | prepend: site.baseurl }}{{ tag[0] }}">#{{ tag[0] }}[{{ tag[1].size }}]</a></li>
+    <li><a href="{{ '/search/?t=' | prepend: site.baseurl }}{{ tag[0] }}">&gt;{{ tag[0] }}[{{ tag[1].size }}]</a></li><br />
     {% endfor %}
 </ul>
