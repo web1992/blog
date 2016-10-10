@@ -28,7 +28,7 @@ keywords: mysql,web1992
 - 11.[主从的作用](#v11)
 - 12.[参考的文档](#v12)
 
-1.主从复制的方法<a name="v1"/>
+1.主从复制的方法<a name="v1"></a>
 ---
 
 >binary log(旧方式) 或者 global transaction identifiers (GTIDs)(新方式)
@@ -36,13 +36,13 @@ keywords: mysql,web1992
 - binary log 需要打开binlog
 - 而GTIDs 不需要打开binglog
 
-2.主从复制的同步/异步方式<a name="v2"/>
+2.主从复制的同步/异步方式<a name="v2"></a>
 ---
 
 - asynchronous  // 异步
 - semi synchronous // 半同步
 
-3.主从复制的配置<a name="v3"/>
+3.主从复制的配置<a name="v3"></a>
 ---
 
 整体的步骤：master配置-> slave配置-> slave链接到master -> 开始复制数据
@@ -83,7 +83,7 @@ keywords: mysql,web1992
 	
 
 
-4.使用`mysqldump` 备份复制master原有的数据，生成dump文件(如果master 没有数据，省略此步骤)<a name="v4"/>
+4.使用`mysqldump` 备份复制master原有的数据，生成dump文件(如果master 没有数据，省略此步骤)<a name="v4"></a>
 ---
 
 	mysqldump -uroot -p -databases demo_db > demo_db.db
@@ -94,7 +94,7 @@ keywords: mysql,web1992
 建议使用mysqldump。
 
 
-5.`slave` 配置,配置server-id，唯一的id,最好也开启binary log,提供数据备份<a name="v5"/>
+5.`slave` 配置,配置server-id，唯一的id,最好也开启binary log,提供数据备份<a name="v5"></a>
 ---
 	[mysqld]
 	server-id=2
@@ -103,7 +103,7 @@ keywords: mysql,web1992
 
 	
 	
-6.slave开始复制数据，如果master 没有数据，执行`8步骤`即可开始复制数据<a name="v6"/>
+6.slave开始复制数据，如果master 没有数据，执行`8步骤`即可开始复制数据<a name="v6"></a>
 ---
 
 
@@ -118,7 +118,7 @@ keywords: mysql,web1992
 
 
 
-8.`slave`链接到`master`数据库<a name="v7"/>
+8.`slave`链接到`master`数据库<a name="v7"></a>
 ---
 	mysql> CHANGE MASTER TO
 		->     MASTER_HOST='master_host_name',
@@ -131,7 +131,7 @@ keywords: mysql,web1992
 
 至此，mysql可以开始复制数据了。
 
-9.mater,slave常用的命令<a name="v9"/>
+9.mater,slave常用的命令<a name="v9"></a>
 ---
 
 > 日志文件,在`/etc/my.cnf`中,如果配置不成功，可以查看此日志
@@ -209,7 +209,7 @@ keywords: mysql,web1992
 
 > start slave;　// 开启主从同步
 
-10.binary log  的格式<a name="v10"/>
+10.binary log  的格式<a name="v10"></a>
 ---
 
 - SBR	Statement Based Replication
@@ -217,7 +217,7 @@ keywords: mysql,web1992
 - MBR	Mixed Based Replication
 
 
-11.主从的作用<a name="v11"/>
+11.主从的作用<a name="v11"></a>
 ---
 
 - performance // 提高性能(读写分离)
@@ -226,7 +226,7 @@ keywords: mysql,web1992
 
 
 ----------
-12.参考的文档：<a name="v12"/>
+12.参考的文档：<a name="v12"></a>
 
 [mysql replication(官网文档)](http://dev.mysql.com/doc/refman/5.7/en/replication.html)
 
