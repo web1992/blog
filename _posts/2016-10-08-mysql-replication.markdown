@@ -107,7 +107,7 @@ keywords: mysql,web1992
 ---
 
 
-7.slave开始复制数据，如果master 已经有数据了
+7.slave开始复制数据，如果master 已经有数据了<a name="v7"></a>
 ---
 - a).使用 --skip-slave-start 启动slave，
 - b).导入dump 文件 `mysql < fulldb.dump`
@@ -118,7 +118,7 @@ keywords: mysql,web1992
 
 
 
-8.`slave`链接到`master`数据库<a name="v7"></a>
+8.`slave`链接到`master`数据库<a name="v8"></a>
 ---
 	mysql> CHANGE MASTER TO
 		->     MASTER_HOST='master_host_name',
