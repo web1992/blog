@@ -19,7 +19,7 @@ keywords: mysql,web1992
 - 2.[主从复制的同步/异步方式](#v2)
 - 3.[主从复制的配置](#v3)
 - 4.[mysqldump 备份数据](#v4)
-- 5.[配置slave](v5)
+- 5.[配置slave](#v5)
 - 6.[master没有数据的配置](#v6)
 - 7.[master已有有数据的配置](#v7)
 - 8.[slave链接到master](#v8)
