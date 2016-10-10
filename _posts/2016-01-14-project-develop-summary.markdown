@@ -27,14 +27,13 @@ keywords: project,Jekyll,web1992
 
 -------------
 
+
+
 核心功能的实现 <a name="v1">&nbsp;</a>
 ----
 
 本次项目的主要目标是什么，解决了什么问题，问题的难点
-
 技术实现问题的难度，成本，时间
-
-
 
 
 细节 <a name="v2">&nbsp;</a>
@@ -104,16 +103,14 @@ keywords: project,Jekyll,web1992
 
 稳定性，安全性，基本可用性（类似管理后台）
 
-[高可用系统](http://coolshell.cn/articles/17459.html#more-17459)
+[高可用系统](#hi)
 
 
 系统的构架思考<a name="v8"></a>
 ---
 
 系统面对的问题（需求）
-
 使用什么技术 （高效率，开发速度快，成本低）
-
 辅助工具类
 
 
@@ -141,5 +138,6 @@ keywords: project,Jekyll,web1992
 [#v9]:v9
 [#v10]:v10
 [#v11]:v11
+[#hi]:http://coolshell.cn/articles/17459.html#more-17459
 
 
