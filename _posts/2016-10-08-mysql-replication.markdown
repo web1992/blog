@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "mysql replication"
+title:  "mysql replication(mysql主从复制)"
 date:  2016-10-08 13:33:00 +0800
-categories: spring
-tags: spring
+categories: mysql
+tags: mysql
 keywords: mysql,web1992
 ---
 
