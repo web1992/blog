@@ -7,7 +7,7 @@ tags: jpygments
 keywords: jpygments,web1992
 ---
 
-### 使用 `jpygments` 进行代码高亮
+### 使用 `jpygments` 对`jeklly`进行代码高亮
 > jpygments 是一个代码高亮工具
 >
 > jpygments 是基于pyhon的,需要安python
