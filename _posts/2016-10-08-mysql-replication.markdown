@@ -14,7 +14,7 @@ keywords: mysql,web1992
 <!--more-->
 
 
-
+------------
 - 1,主从复制的方法
 - 2,主从复制的同步/异步方式
 - 3,主从复制的配置
@@ -224,7 +224,7 @@ keywords: mysql,web1992
 
 
 
-
+----------
 参考的文档：
 
 [mysql replication(官网文档)](http://dev.mysql.com/doc/refman/5.7/en/replication.html)
