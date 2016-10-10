@@ -15,13 +15,14 @@ keywords: spring,web1992,spring mvc
 
 <!--more-->
 
-- 1.[DispatcherServlet 的作用]()
-- 2.[DispatcherServlet 的初始化]()
-- 3.[DispatcherServlet 的配置]()
-- 4.[ContextLoaderListener 配置]()
-- 5.[ContextLoaderListener 的作用]()
-- 6.[ContextLoaderListener类的继承关系]()
-
+- 1.[DispatcherServlet 的作用](#v1)
+- 2.[DispatcherServlet 的初始化](#v2)
+- 3.[DispatcherServlet 的配置](#v3)
+- 4.[ContextLoaderListener 配置](#v4)
+- 5.[ContextLoaderListener 的作用](#v5)
+- 6.[ContextLoaderListener类的继承关系](#v6)
+- 7.[参考的文章](#v7)
+<a name="v1"></a>
 1.`DispatcherServlet`的作用：
 ----
 
@@ -34,7 +35,7 @@ keywords: spring,web1992,spring mvc
 	Central dispatcher // DispatcherServlet是一个调度中心，主要处理http请求，url映射，异常处理等
 	
 
-
+<a name="v2"></a>
 2.`DispatcherServlet` 的初始化：
 ---
 
@@ -59,6 +60,8 @@ keywords: spring,web1992,spring mvc
 	4,初始化 dispatcherServlet 
 	5,web 容器启动完成
 
+	
+<a name="v3"></a>
 3.`DispatcherServlet` 的配置：
 ---
 
@@ -91,7 +94,7 @@ keywords: spring,web1992,spring mvc
 ![](https://i.imgur.com/h3o9bYP.jpg)
 
 
-
+<a name="v4"></a>
 4.`ContextLoaderListener`配置：
 ---
 
@@ -108,6 +111,7 @@ keywords: spring,web1992,spring mvc
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+<a name="v5"></a>
 5.`ContextLoaderListener` 的作用
 ---
 
@@ -121,20 +125,30 @@ keywords: spring,web1992,spring mvc
 
 	 org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
-
+<a name="v6"></a>
 6.`ContextLoaderListener` 类的继承关系
 ---
 
 ![](https://i.imgur.com/0mWshgN.jpg)
 
-
+<a name="v7"></a>
 ---------
-参考的文章：
+7.参考的文章：
 
 - [参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
 - [参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
 - [参考3](http://www.cnblogs.com/hellojava/archive/2012/12/26/2833840.html)
 - [参考4-filter](http://tianweili.github.io/blog/2015/01/26/java-filter/)
+
+
+[#v1]:v1
+[#v2]:v2
+[#v3]:v3
+[#v4]:v4
+[#v5]:v5
+[#v6]:v6
+[#v7]:v7
+
 
 
 
