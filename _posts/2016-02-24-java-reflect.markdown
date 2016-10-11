@@ -1,4 +1,4 @@
----
+...---
 layout: post
 title:  "java reflect"
 date:  2016-02-24 19:08:00 +0800
@@ -72,9 +72,9 @@ keywords: java,web1992
 	{% endhighlight %}
 	
 	
-输出：
+输出
+
 	before value=1
 	before value=null
 	after value=2
 	after value=Actor{name='Lucy'}
-
