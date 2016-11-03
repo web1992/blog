@@ -23,8 +23,7 @@ keywords: idea,web1992
 
 输入`main`,按下`tab`,就可以出现想要的main方法了
 
-![](http://i.imgur.com/lKIq4pw.gif)
-
+![](http://i.imgur.com/vYVWwTP.gif)
 
 
 配置idea:
