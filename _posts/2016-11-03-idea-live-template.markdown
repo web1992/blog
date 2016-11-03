@@ -8,14 +8,13 @@ keywords: idea,web1992
 ---
 
 `idea` code live template 模板
+---
 
 `idea` 自动生成`main`方法
 
 <!--more-->
 
-用过`eclipse`的同学都知道，在eclipse中 输入 `main`,`alt + /`
-
-可以进行自动补全，就可以自动补全main方法。
+用过`eclipse`的同学都知道，在eclipse中 输入 `main`,`alt + /`可以进行自动补全，就可以自动补全main方法。
 
 当然强大的`idea` 也是可以的，需要配置
 
@@ -47,6 +46,10 @@ File > Settings > Editor > Live Templates
 还可以配置导出，可以在其他电脑上时候，就不需要重新配置一遍了
 
 ![](https://i.imgur.com/7S1JIHV.png)
+
+
+
+[参考文档](https://www.jetbrains.com/help/idea/2016.2/exporting-and-importing-settings.html)
 	
 
 
