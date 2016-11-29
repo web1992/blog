@@ -14,15 +14,19 @@ java jdk list
 
 <!--more-->
 
-一级
-----
+
+优先级列表
+
+>一级
+
 
 	java.io
 	java.lang
 	java.util
 
-二级
------
+
+>二级
+
 
 	java.lang.reflect
 	java.net
@@ -30,8 +34,9 @@ java jdk list
 	java.nio.*
 	java.util.concurrent.*
 
-三级
------
+
+>三级
+
 
 	java.lang.annotation
 	javax.annotation.*
