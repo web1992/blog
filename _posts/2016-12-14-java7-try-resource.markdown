@@ -36,6 +36,8 @@ java7中新增了 try-resource 自动关闭资源的新特性
 
 >代码1，手动关闭资源
 >
+
+
 	import java.io.File;
 	import java.io.FileOutputStream;
 	
