@@ -45,11 +45,11 @@ java jstack dump log 分析记录
 
 **使用`jstack` 命令**
 
-
+	{% highlight sh %}
 	jstack -l 9532>java_thread_dump.log
 
 	#9532 为java进程的ID
-
+	{% endhighlight %}
 
 [jstack命令用法](http://www.cnblogs.com/nexiyi/p/java_thread_jstack.html)
 
@@ -66,7 +66,9 @@ java jstack dump log 分析记录
 
 可以看到这个控制器出现了40次！！！！激动啊，问题所在点马上知道了
 
-	
+
+
+		{% highlight java %}
 		- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
 		at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 		at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
@@ -81,7 +83,7 @@ java jstack dump log 分析记录
 		at com.ejavashop.service.impl.order.OrdersServiceImpl.orderCommitRest(OrdersServiceImpl.java:330)
 		at com.biz.shard.manager.order.impl.OrderManagerImpl.submitOrder(OrderManagerImpl.java:348)
 		at com.ejavashop.web.rest.order.controller.OrderRestController.submitOrder(OrderRestController.java:138)
-
+		{% endhighlight %}
 
 
 继续追踪堆栈信息,发现了这一行代码
