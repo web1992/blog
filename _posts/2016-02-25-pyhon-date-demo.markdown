@@ -10,7 +10,7 @@ keywords: python,web1992
 ###  `python` 日期格式化例子
 <!--more-->
 
-	{% highlight python %}
+```python
 	# encoding=utf-8
 	import sys
 	import datetime
@@ -40,5 +40,5 @@ keywords: python,web1992
 	if __name__ == '__main__':
 	    get_data_name()
 	   
-	{% endhighlight %}
+```
 	

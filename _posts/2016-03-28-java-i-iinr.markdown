@@ -16,7 +16,7 @@ keywords: java,web1992
 ####java代码1
 
 
-	{% highlight java %}
+```java
 	public class Test {
 
 	   public static void main(String[] args) {
@@ -26,7 +26,7 @@ keywords: java,web1992
 			System.out.println(q);
 	  }
 
-	{% endhighlight %}
+```
 
 >输出结果 0
 >
@@ -34,7 +34,7 @@ keywords: java,web1992
 ####java代码2
                                                   
                                                      
-        {% highlight java %}                         
+```java                      
         public class Test {                          
                                                      
            public static void main(String[] args) {  
@@ -44,7 +44,7 @@ keywords: java,web1992
                         System.out.println(q);       
           }                                          
                                                      
-        {% endhighlight %}     
+``` 
 
 >输出结果 1
 > 
@@ -58,7 +58,7 @@ keywords: java,web1992
 
 ####代码1的反编译
 
-	{% highlight java %} 
+```java
 	Code:
     	0: iconst_0
     	1: istore_1
@@ -69,11 +69,11 @@ keywords: java,web1992
    		10: iload_1
    		11: invokevirtual #3   
    		14: return
-	{% endhighlight  %} 
+```
 
 ####代码2的反编译： 
 
-	{% highlight java %} 
+```java
 	Code:
 	0: iconst_0
 	1: istore_1
@@ -84,7 +84,7 @@ keywords: java,web1992
 	10: iload_1
 	11: invokevirtual #3    
 	14: return 
-	{% endhighlight  %} 
+```
    
 
                   

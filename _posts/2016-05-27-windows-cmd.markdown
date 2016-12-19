@@ -11,7 +11,7 @@ windows 常用命令
 
 <!--more-->
 
-	{% highlight bat %}
+```sh
 
 	netstat -ano  |findstr 3306
 		
@@ -21,4 +21,4 @@ windows 常用命令
 	taskkill /T /F /PID 6376
 	## /T 所有子进程
 	## /F 强制杀
-	{% endhighlight %}
+```

@@ -21,7 +21,7 @@ keywords: java,web1992
 >先看一段代码
 >
 	
-{% highlight java %}
+```java
 
     public static void main(String[] args) {
         List<String> stringList = Arrays.asList("A", "b", "c", "D", "1", "e", "f");
@@ -46,7 +46,7 @@ keywords: java,web1992
                 });
     }
 
-{% endhighlight %}
+```
 
 >输出结果
 	

@@ -15,11 +15,12 @@ tomcat conf/server.xml 配置demo
 可以在 <Host> 添加多个Context，配置多个服务
 
 
-	{% highlight xml %}
+```xml
 	
 	<Context path="/app1" docBase="/data/www/app1.war" />
 	<Context path="/app2" docBase="/data/www/app2.war" />
 	{% endhighlight %}
+```
 
 > 可以通过 
 

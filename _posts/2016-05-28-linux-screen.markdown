@@ -18,7 +18,7 @@ linux screen的使用
 
 sh 中使用screen
 
-	{% highlight sh %}
+```sh
 	
 	#!/bin/sh
 	
@@ -27,5 +27,4 @@ sh 中使用screen
 	screen -dm  test &&  echo "test" >a.txt
 
 	# screen -r test 可以链接到此screen了
-	
-	{% endhighlight %}
+```

@@ -13,7 +13,7 @@ keywords: mysql, Linux,Jekyll,web1992,APPARENT DEADLOCK
 
 <!--more-->
 
-
+```sh
     ThreadPoolAsynchronousRunner$DeadlockDetector.run - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@3a6d6182 -- APPARENT DEADLOCK!!! Complete Status:
     Managed Threads: 3
     Active Threads: 3
@@ -42,18 +42,19 @@ keywords: mysql, Linux,Jekyll,web1992,APPARENT DEADLOCK
     com.mchange.v1.db.sql.StatementUtils.attemptClose(StatementUtils.java:41)
     com.mchange.v2.c3p0.stmt.GooGooStatementCache$1StatementCloseTask.run(GooGooStatementCache.java:404)
     com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:547)
+```
 
 > 程序出现以下错误：
-    
+```sh
     JDBCExceptionReporter.logExceptions - SQL Error: 1205, SQLState: 41000
     JDBCExceptionReporter.logExceptions - Lock wait timeout exceeded; try restarting transaction
     AbstractFlushingEventListener.performExecutions - Could not synchronize database state with session
-
+```
 > 这里登陆服务器，查找问题，发现 `linux` 的磁盘满了，
 >
 > 通过下面命令
 
-	{% highlight sh linenos %}    
+```sh
     	#显示磁盘信息
     	df -h
     	#进入 `data` 文件目录下面，查询每个文件夹的大小
@@ -63,7 +64,7 @@ keywords: mysql, Linux,Jekyll,web1992,APPARENT DEADLOCK
     	28M windows
     	28K windows_build.xml
     	...
-	{% endhighlight %}
+```
 
 > 删除无用的过大文件即可
 

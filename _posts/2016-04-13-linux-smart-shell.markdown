@@ -10,7 +10,7 @@ keywords: linux,shell,web1992
 ###撸下shell 
 
 <!--more-->
-	{% highlight sh %}
+```sh
 		#!/bin/bash
 		
 		beginId=2006
@@ -69,7 +69,7 @@ keywords: linux,shell,web1992
 
 		exit;
 
-	{% endhighlight %}
+```
 
 > 解析shell的网站
 >

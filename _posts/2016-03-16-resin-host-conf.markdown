@@ -12,7 +12,7 @@ keywords: java,resin,web1992
 
 <!--more-->
 
-	{% highlight xml %}
+```xml
 
 	<!--  host-->
 	<host id="www.web1992.cn">
@@ -23,4 +23,4 @@ keywords: java,resin,web1992
 	<stderr-log path='/data/logs/stderr.log' timestamp="[%H:%M:%S.%s]" rollover-period='1D'/>
 	<access-log path='/data/logs/access.log' archive-format="access.log.%Y-%m-%d.gz" rollover-period='1D'/>
 	</host>
-	{% endhighlight %}
+```

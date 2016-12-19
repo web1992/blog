@@ -14,7 +14,7 @@ mysql 备忘
 ###mysql 表中使用存储过程添加新字段 
 
 
-	{% highlight sql %}
+```sql
 	-- 1, 注意SQL 语句开始处不要空格
 	-- 2, 在使用 [--] 进行注释时，后面请加空格
 	
@@ -32,10 +32,10 @@ mysql 备忘
 	call schema_change();
 	drop procedure if exists schema_change;
 
-	{% endhighlight %}
+```sql
 
 ###mysql 删除表
 
-	{% highlight sql %}
+```sql
 	DROP TABLE IF EXISTS `t_my_table`;
-	{% endhighlight %}
+```

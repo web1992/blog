@@ -26,13 +26,16 @@ keywords: idea,web1992
 
 
 配置idea:
-
+```java
     public static void main(String[] args){
 
         
     }
+```
 
+```
 File > Settings > Editor > Live Templates
+```
 
 ![](https://i.imgur.com/ig63CBs.png)
 

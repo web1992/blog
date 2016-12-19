@@ -14,7 +14,7 @@ keywords: nginx,web1992
 > 负载+反向代理
 >
 
-	{% highlight sh %}
+```sh
 			
 	upstream www.web1992.cn
     {
@@ -39,12 +39,12 @@ keywords: nginx,web1992
 
 	}
 
-	{% endhighlight %}
+```
 
 >nginx 处理静态资源
 >
 	
-	{% highlight sh %}
+```sh
 	server
 	{
 		listen 80;
@@ -63,4 +63,4 @@ keywords: nginx,web1992
 		index index.html;
 		root /data/www/groovy-2.4.6/html/documentation/;
 	}
-	{% endhighlight %}
+```

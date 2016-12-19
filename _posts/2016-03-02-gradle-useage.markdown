@@ -35,30 +35,30 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	
 ###2 使用daemon
 
-	{% highlight sh %}
+```sh
 		# 启用 gradle 后台进程，这样在本机进行开发时，进行build 时的速度提高（节省时间）
 		touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
 	
-	{% endhighlight %}
+```
 
 
 ###3 列出项目使用的jar包
 
-	{% highlight groovy %}
+```groovy
 		task listJars << {
 			configurations.compile.each { File file -> println file.name }
 		}	
-	{% endhighlight %}
+```
 
 执行task listJars
 
-	{% highlight groovy %}
+```groovy
 		gradle -q listJars
-	{% endhighlight %}
+```
 
 ###4 配置依赖的多种方式
 
-	{% highlight groovy %}
+```
 		dependencies {
 		    runtime group: 'org.springframework', name: 'spring-core', version: '2.5'
 		    runtime 'org.springframework:spring-core:2.5',
@@ -76,7 +76,7 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 		    }
 		}
 		
-	{% endhighlight %}
+```
 ###5 build Java Library （构架jar）
 
 - 使`java-library-distribution`插件
@@ -86,7 +86,7 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 ---
 
 
-	{% highlight groovy %}
+```groovy
 		apply plugin: 'java-library-distribution'
 			
 		distributions {
@@ -97,19 +97,18 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	        	}
 	    	}
 	}
-	{% endhighlight %}
-
+```
 ----------
 
-	{% highlight sh %}
+```sh
 		gradle distZip
-	{% endhighlight %}
+```
 
 ###6 配置gradle task
 
 关于task的配置可参照 http://gradle.web1992.cn/more_about_tasks.html#defineAsExpression
 
-	{% highlight groovy %}
+```groovy
 	task myCopy(type: Copy)
 	
 	myCopy {
@@ -127,11 +126,11 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	}
 	#配置依赖
 	taskX.dependsOn taskY
-	{% endhighlight %}
+```
 
 ###7 gradle变量配置（局部变量&全局变量）
 
-	{% highlight groovy %}
+```groovy
 	#局部变量 def 定义
 	def dest = "dest"
 	
@@ -169,12 +168,12 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	}
 	
 	
-	{% endhighlight %}
+```
 	
 	
 ###8 gradle项目之间的依赖
 
-	{% highlight groovy %}
+```groovy
 	dependencies {
 		compile project(':a1')
 		compile project(':a2')
@@ -185,9 +184,11 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	version '1.0.0'
 	### 启动的Main 方法
 	mainClassName = "com.demo.A2"
-	{% endhighlight %}
+```
+
 ###9 whenReady 动态设置task 的值
-	{% highlight groovy %} 
+
+```groovy
 	task distribution << {
     		println "We build the zip with version=$version"
 	}	
@@ -203,4 +204,4 @@ gradle 官网引用了google 的文件，导致访问十分慢，
 	        version = '1.0-SNAPSHOT'
 	    }
 	}	
-	{% endhighlight %}
+```

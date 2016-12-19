@@ -60,11 +60,11 @@ keywords: mysql,web1992
 1).`master` 配置
 
 开启binary log ,设置`server-id`，`server-id`是唯一的，maset,slave 都不可以重复(需要重启生效)
-
+```sh
 	[mysqld]
 	server-id=1
 	log-bin=mysql-bin
-
+```
 
 2).在`master`配置新的mysql账户，确保有  `REPLICATION SLAVE` 的权限,(slave使用此账户，复制数据)
 
@@ -72,14 +72,14 @@ keywords: mysql,web1992
 	GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%.mydomain.com';
 	
 3).获取master binary log 文件的位置和Position 
-
+```sh
 	mysql> SHOW MASTER STATUS;
 	+------------------+----------+--------------+------------------+-------------------+
 	| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
 	+------------------+----------+--------------+------------------+-------------------+
 	| mysql-bin.000004 |  9781044 |              |                  |                   |
 	+------------------+----------+--------------+------------------+-------------------+
-
+```
 	File mysql-bin.000004 Position 9781044  需要在slave链接到master时使用
 	
 
@@ -97,11 +97,12 @@ keywords: mysql,web1992
 
 5.`slave` 配置,配置server-id，唯一的id,最好也开启binary log,提供数据备份<a name="v5"></a>
 ---
+```sh
 	[mysqld]
 	server-id=2
 	log-bin=mysql-bin
 	skip-slave-start
-
+```
 	
 	
 6.slave开始复制数据，如果master 没有数据，执行`8步骤`即可开始复制数据<a name="v6"></a>
@@ -121,13 +122,14 @@ keywords: mysql,web1992
 
 8.`slave`链接到`master`数据库<a name="v8"></a>
 ---
+```sh
 	mysql> CHANGE MASTER TO
 		->     MASTER_HOST='master_host_name',
 		->     MASTER_USER='replication_user_name',
 		->     MASTER_PASSWORD='replication_password',
 		->     MASTER_LOG_FILE='recorded_log_file_name',
 		->     MASTER_LOG_POS=recorded_log_position;
-
+```
 	
 
 至此，mysql可以开始复制数据了。
@@ -141,6 +143,7 @@ keywords: mysql,web1992
 
 > show slave status\G; 查询slave的状态，在salve中执行才有数据
 
+```sh
     mysql> show slave status\G;
     *************************** 1. row ***************************
        Slave_IO_State: Waiting for master to send event
@@ -201,7 +204,7 @@ keywords: mysql,web1992
      Channel_Name: 
        Master_TLS_Version: 
     1 row in set (0.00 sec)
-
+```
 
 
 `Slave_IO_State: Waiting for master to send event` 可以查询到从库slave的状态

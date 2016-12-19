@@ -31,11 +31,12 @@ keywords: linux,web1992,curl
 
 > curl命令：
 
+```sh
     curl -i  -d "{key:"123"}" -H "Content-Type: application/json"  "http://127.0.0.1:8081/api/example/"
-
+```
 
 > 输出：
-	
+```sh
 	HTTP/1.1 200 OK
 	Server: Apache-Coyote/1.1
 	Content-Type: application/json;charset=UTF-8
@@ -43,7 +44,7 @@ keywords: linux,web1992,curl
 	Date: Tue, 20 Sep 2016 03:28:14 GMT
 	
 	{"info":"","success":true}
-
+```
 
 > 参数含义：
 
@@ -56,6 +57,7 @@ keywords: linux,web1992,curl
 
 `-I`参数则是只显示http response的头信息。
 
+```sh
 	curl -I www.web1992.cn       
                                                                                                                       
 	HTTP/1.1 301 Moved Permanently
@@ -64,7 +66,7 @@ keywords: linux,web1992,curl
 	Content-Type: text/html
 	Content-Length: 185
 	Connection: keep-alive
-
+```
 
 
 

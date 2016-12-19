@@ -13,11 +13,11 @@ keywords: Java, Linux,Jekyll,sh,web1992
 
 <!--more-->
 
-	{% highlight sh %}
+```sh
 	# 列出 `/data/` 目录下的所有文件
 	for i in `ls -l /data/ |awk -F' ' '{print $9}'` ; do echo $i; done; 
 
 	for i in `ls -l /data/ |awk -F' ' '{print $9}'` ; do echo $i; sleep 1; grep -i ^insert $i  > $i'.txt';  done; 
-	{% endhighlight %}
+```
 
 

@@ -10,7 +10,7 @@ keywords: web1992,Java, Linux,Jekyll,git
 
 > git fetch tag 获取远程tag
 
-	{% highlight sh %}
+```sh
 	获取远程的tag( 远程存在，本地不存在)
  	git fetch origin tag 2.4.7
 
@@ -21,4 +21,4 @@ keywords: web1992,Java, Linux,Jekyll,git
  	From ssh://project_name
  	* [new tag]         2.4.7      -> 2.4.7
  	* [new tag]         2.4.6      -> 2.4.6
-	{% endhighlight %}
+```

@@ -10,7 +10,7 @@ keywords: linux,,shell,web1992
 ###linux 自动重启服务命令
 
 <!--more-->
-	{% highlight sh %}
+```sh
 		#!/bin/bash
         pid=`ps aux |grep java |awk '{if($12=="-Dserver.name=game_server_s1") print $2}'`
 
@@ -34,4 +34,4 @@ keywords: linux,,shell,web1992
 			echo "game server is ok";
 		fi;
 		exit;
-	{% endhighlight %}
+```

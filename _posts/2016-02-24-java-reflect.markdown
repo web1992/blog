@@ -14,7 +14,7 @@ keywords: java,web1992
 
 <!--more-->
 	
-	{% highlight java %}
+```java
 	
 	import java.lang.reflect.Field;
 
@@ -69,7 +69,7 @@ keywords: java,web1992
 	}
 	
 	   
-	{% endhighlight %}
+```
 	
 	
 输出

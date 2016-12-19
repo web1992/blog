@@ -10,7 +10,7 @@ keywords: jekyll,web1992
 >使用`python`连接`mysql`数据库
 
 <!--more-->
-	{% highlight python %}
+```python
 	
 	# encoding=utf-8
 	import sys
@@ -89,4 +89,4 @@ keywords: jekyll,web1992
 	if __name__=='__main__':
 	    pass
 	
-	{% endhighlight %}
+```

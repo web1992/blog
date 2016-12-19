@@ -29,13 +29,13 @@ keywords: spring,web1992,spring mvc
 ----
 
 在 `DispatcherServlet javadoc` 中有这句话
-
+```java
 	Central dispatcher for HTTP request handlers/controllers, e.g. for web UI controllers or HTTP-based remote service
 	exporters. Dispatches to registered handlers for processing a web request, providing convenient mapping and exception
 	handling facilities.
 
 	Central dispatcher // DispatcherServlet是一个调度中心，主要处理http请求，url映射，异常处理等
-	
+```	
 
 <a name="v2"></a>
 2.`DispatcherServlet` 的初始化：
@@ -44,6 +44,7 @@ keywords: spring,web1992,spring mvc
 > DispatcherServlet 是一个`servlet` 继承了我们熟悉的 `HttpServlet`
 > 它的初始化时在web容器创建时进行的，如果配置了 Filter，可以看到如下日志
 
+```java
 	[INFO] Initializing log4j from [D:\github\javas\java_note\app_assembly\target\assembly_app_war\webapp\WEB-INF\log4j.xml]
 	[INFO] Initializing Spring root WebApplicationContext
 	Root WebApplicationContext: initialization started // WebApplicationContext初始化开始
@@ -61,13 +62,13 @@ keywords: spring,web1992,spring mvc
 	3,初始化 Filter 基于Servlet 规范的过滤器
 	4,初始化 dispatcherServlet 
 	5,web 容器启动完成
-
+```
 	
 <a name="v3"></a>
 3.`DispatcherServlet` 的配置：
 ---
 
-
+```xml
 		<servlet>
 	        <servlet-name>dispatcherServlet</servlet-name>
 	        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -82,7 +83,7 @@ keywords: spring,web1992,spring mvc
 	        <url-pattern>/</url-pattern>
 	    </servlet-mapping>
 
-		
+```		
 
 > a,在web.xml 使用 `servlet`标签 进行配置
 
@@ -100,7 +101,7 @@ keywords: spring,web1992,spring mvc
 4.`ContextLoaderListener`配置：
 ---
 
-
+```xml
 	<!-- spring 配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -112,6 +113,7 @@ keywords: spring,web1992,spring mvc
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+```
 
 <a name="v5"></a>
 5.`ContextLoaderListener` 的作用

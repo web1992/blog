@@ -12,7 +12,7 @@ keywords: mysql,web1992
 
 <!--more-->
 
-	{% highlight sh %}
+```sh
 	_id=123
 	# -c, --complete-insert
 	# -t, --no-create-info
@@ -25,5 +25,5 @@ keywords: mysql,web1992
 	# 备份 t_my_table 中的数据到 t_my_table.sql 文件中
 	mysqldump   -t -q  my_database t_my_table >> "t_my_table.sql"
 	
-	{% endhighlight %}
+```
 	

@@ -14,7 +14,8 @@ keywords: linux,web1992
 
 
 <!--more-->
-	{% highlight sh %}
+
+```sh
 	_file="a.txt"
 	dest_dir="release"
 	_version="1.0.1"
@@ -37,4 +38,4 @@ keywords: linux,web1992
 	# get  取文件到当前目录
 	bye
 	!
-	{% endhighlight %}
+```

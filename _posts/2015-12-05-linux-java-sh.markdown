@@ -11,7 +11,7 @@ keywords: web1992,Java, Linux,Jekyll,sh
 
 <!--more-->
 
-	{% highlight sh %}
+```sh
     #!/bin/bash
     export LANG=en_US.UTF8
     start(){
@@ -47,6 +47,5 @@ keywords: web1992,Java, Linux,Jekyll,sh
     echo $"Usage: {start|stop}"
     exit 1
     esac	
-	{% endhighlight %}
-
+```sh
 

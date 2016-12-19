@@ -24,7 +24,7 @@ vim 插件
 
 .vimrc配置
 ---
-	{% highlight sh %}
+```sh
 	set nocompatible              " be iMproved, required
 	filetype off                  " required
 	set nu
@@ -123,7 +123,7 @@ vim 插件
 	call vundle#end()            " required
 	filetype plugin indent on    " required
 
-	{% endhighlight %}
+```
 
 ###vim 效果图
 
