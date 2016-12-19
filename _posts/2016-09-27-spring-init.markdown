@@ -24,8 +24,7 @@ keywords: spring,web1992,spring mvc
 - 7.[参考的文章](#v7)
 
 
-<a name="v1"></a>
-1.`DispatcherServlet`的作用：
+1.`DispatcherServlet`的作用：<a name="v1"></a>
 ----
 
 在 `DispatcherServlet javadoc` 中有这句话
@@ -37,8 +36,8 @@ keywords: spring,web1992,spring mvc
 	Central dispatcher // DispatcherServlet是一个调度中心，主要处理http请求，url映射，异常处理等
 ```	
 
-<a name="v2"></a>
-2.`DispatcherServlet` 的初始化：
+
+2.`DispatcherServlet` 的初始化： <a name="v2"></a>
 ---
 
 > DispatcherServlet 是一个`servlet` 继承了我们熟悉的 `HttpServlet`
@@ -64,8 +63,8 @@ keywords: spring,web1992,spring mvc
 	5,web 容器启动完成
 ```
 	
-<a name="v3"></a>
-3.`DispatcherServlet` 的配置：
+
+3.`DispatcherServlet` 的配置： <a name="v3"></a>
 ---
 
 ```xml
@@ -97,8 +96,8 @@ keywords: spring,web1992,spring mvc
 ![](https://i.imgur.com/h3o9bYP.jpg)
 
 
-<a name="v4"></a>
-4.`ContextLoaderListener`配置：
+
+4.`ContextLoaderListener`配置： <a name="v4"></a>
 ---
 
 ```xml
@@ -115,8 +114,8 @@ keywords: spring,web1992,spring mvc
 	</listener>
 ```
 
-<a name="v5"></a>
-5.`ContextLoaderListener` 的作用
+
+5.`ContextLoaderListener` 的作用 <a name="v5"></a>
 ---
 `ContextLoaderListener` 继承了 `ServletContextListener`代码如下：
 
@@ -131,15 +130,15 @@ keywords: spring,web1992,spring mvc
 
 	org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
 
-<a name="v6"></a>
-6.`ContextLoaderListener` 类的继承关系
+
+6.`ContextLoaderListener` 类的继承关系 <a name="v6"></a>
 ---
 
 ![](https://i.imgur.com/0mWshgN.jpg)
 
-<a name="v7"></a>
+
 ---------
-7.参考的文章：
+7.参考的文章： <a name="v7"></a>
 
 - [参考1](http://blog.csdn.net/agileclipse/article/details/9014683)
 - [参考2](http://www.cnblogs.com/JesseV/archive/2009/11/17/1605015.html)
