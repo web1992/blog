@@ -93,10 +93,13 @@ java jstack dump log 分析记录
 ```
 
 分析所有等待的线程
+
 ```java
 	cat java_thread_dump.log |grep "parking to wait for" |uniq -c
 ```
+
 结果:
+
 ```java
 	40 	- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
 ```
