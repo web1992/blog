@@ -28,6 +28,7 @@ keywords: spring,web1992,spring mvc
 ----
 
 在 `DispatcherServlet javadoc` 中有这句话
+
 ```java
 	Central dispatcher for HTTP request handlers/controllers, e.g. for web UI controllers or HTTP-based remote service
 	exporters. Dispatches to registered handlers for processing a web request, providing convenient mapping and exception
