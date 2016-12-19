@@ -1,4 +1,4 @@
-...---
+---
 layout: post
 title:  "java reflect"
 date:  2016-02-24 19:08:00 +0800
