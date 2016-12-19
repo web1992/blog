@@ -36,6 +36,7 @@ keywords: linux,web1992,curl
 ```
 
 > 输出：
+
 ```sh
 	HTTP/1.1 200 OK
 	Server: Apache-Coyote/1.1
