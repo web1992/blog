@@ -68,7 +68,7 @@ java jstack dump log 分析记录
 
 
 
-		{% highlight java %}
+```java
 		- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
 		at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 		at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
@@ -83,22 +83,23 @@ java jstack dump log 分析记录
 		at com.ejavashop.service.impl.order.OrdersServiceImpl.orderCommitRest(OrdersServiceImpl.java:330)
 		at com.biz.shard.manager.order.impl.OrderManagerImpl.submitOrder(OrderManagerImpl.java:348)
 		at com.ejavashop.web.rest.order.controller.OrderRestController.submitOrder(OrderRestController.java:138)
-		{% endhighlight %}
+```
 
 
 继续追踪堆栈信息,发现了这一行代码
 
+```java
 	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:524)
+```
 
-
-分析这个等待的线程
-
-	cat java_thread_dump.log |grep "0x0000000088b715a8" |uniq -c
-
+分析所有等待的线程
+```java
+	cat java_thread_dump.log |grep "parking to wait for" |uniq -c
+```
 结果:
-
+```java
 	40 	- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
-
+```
 
 `LinkedBlockingDeque`  队列，阻塞队列！！！，很有可能是这个队列一直在阻塞，等待获取资源
 

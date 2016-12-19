@@ -10,6 +10,7 @@ keywords: java,web1992
 
 ####java i++ 与 ++i 的区别
 
+本文从java的字节码角度，去探索一下i++ 与++i的本质的区别
 
 <!--more-->
 ####java代码1
@@ -113,7 +114,7 @@ keywords: java,web1992
 
 3. 在进行算术运算时，局部变量表与操作数栈是存在数据交互的
 
-可参考：[ "栈帧、局部变量表、操作数栈"](http://wangwengcn.iteye.com/blog/1622195)
+可参考：[ "栈帧、局部变量表、操作数栈 http://wangwengcn.iteye.com/blog/1622195"](http://wangwengcn.iteye.com/blog/1622195)
 > 以上是操作数栈的相关概念
 
 <br />
