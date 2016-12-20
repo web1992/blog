@@ -45,11 +45,11 @@ java jstack dump log 分析记录
 
 **使用`jstack` 命令**
 
-	{% highlight sh %}
+```sh
 	jstack -l 9532>java_thread_dump.log
 
 	#9532 为java进程的ID
-	{% endhighlight %}
+```
 
 [jstack命令用法](http://www.cnblogs.com/nexiyi/p/java_thread_jstack.html)
 
