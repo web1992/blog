@@ -61,6 +61,8 @@ Condition 用法实例（类似 ArrayBlockingQueue）
     optimization of only notifying a single thread at a time when items or spaces become available in the buffer. 
     This can be achieved using two Condition instances. 
 
+>代码例子：
+
 ```java
 
 	class BoundedBuffer {
