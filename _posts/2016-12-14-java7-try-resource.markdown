@@ -38,7 +38,7 @@ java7中新增了 try-resource 自动关闭资源的新特性
 >
 
 	
-	{% highlight java %}
+```java
 	import java.io.File;
 	import java.io.FileOutputStream;
 	
@@ -51,11 +51,11 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	        outputStream.close();
 	    }
 	}
-	{% endhighlight %}
+```
 
 >代码1javap -c 反编译之后的代码
 
-	{% highlight java %}
+```java
 	Compiled from "TestTryJava7Old.java"
 	public class TestTryJava7Old {
 	  public TestTryJava7Old();
@@ -82,13 +82,13 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	      27: invokevirtual #10                 // Method java/io/FileOutputStream.close:()V
 	      30: return
 	}
-	{% endhighlight %}
+```
 
 
 >代码2,不关闭资源
 
 
-	{% highlight java %}
+```java
 	import java.io.File;
 	import java.io.FileOutputStream;
 	
@@ -101,12 +101,12 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	        
 	    }
 	}
-	{% endhighlight %}
+```
 
 >代码2javap -c 反编译之后的代码
 
 
-	{% highlight java %}
+```java
 	Compiled from "TestTryJava7Old.java"
 	public class TestTryJava7Old {
 	  public TestTryJava7Old();
@@ -131,7 +131,7 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	      23: invokevirtual #9                  // Method java/io/FileOutputStream.write:([B)V
 	      26: return
 	}
-	{% endhighlight %}
+```
 
 
 反编译之后代码的主要区别在这一行
@@ -146,7 +146,7 @@ java7中新增了 try-resource 自动关闭资源的新特性
 >使用java7新特性，自动关闭资源的代码3
 >
 
-	{% highlight java %}
+```java
 	import java.io.File;
 	import java.io.FileOutputStream;
 	
@@ -160,12 +160,12 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	
 	    }
 	}
-	{% endhighlight %}
+```
 
 >代码3`javap -c` 反编译之后的代码
 
 
-	{% highlight java %}
+```java
 	Compiled from "TestTryJava7.java"
 	public class TestTryJava7 {
 	  public TestTryJava7();
@@ -236,7 +236,7 @@ java7中新增了 try-resource 自动关闭资源的新特性
 	          74    78    81   Class java/lang/Throwable
 	          59    66    64   any
 	}
-	{% endhighlight %}
+```
 
 
 注意这一行 `// Method java/io/FileOutputStream.close:()V`,
