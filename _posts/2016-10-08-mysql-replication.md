@@ -60,6 +60,7 @@ keywords: mysql,web1992
 1).`master` 配置
 
 开启binary log ,设置`server-id`，`server-id`是唯一的，maset,slave 都不可以重复(需要重启生效)
+
 ```sh
 	[mysqld]
 	server-id=1
@@ -72,6 +73,7 @@ keywords: mysql,web1992
 	GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%.mydomain.com';
 	
 3).获取master binary log 文件的位置和Position 
+
 ```sh
 	mysql> SHOW MASTER STATUS;
 	+------------------+----------+--------------+------------------+-------------------+
@@ -97,6 +99,7 @@ keywords: mysql,web1992
 
 5.`slave` 配置,配置server-id，唯一的id,最好也开启binary log,提供数据备份<a name="v5"></a>
 ---
+
 ```sh
 	[mysqld]
 	server-id=2
@@ -122,6 +125,7 @@ keywords: mysql,web1992
 
 8.`slave`链接到`master`数据库<a name="v8"></a>
 ---
+
 ```sh
 	mysql> CHANGE MASTER TO
 		->     MASTER_HOST='master_host_name',
