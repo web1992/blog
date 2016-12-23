@@ -3,7 +3,7 @@ layout: post
 title:  "linux diff 命令"
 date:  2016-02-08 21:05:00 +0800
 categories: linux
-tags: jekyll
+tags: linux
 keywords: linux,web1992
 ---
 
