@@ -47,5 +47,5 @@ keywords: web1992,Java, Linux,Jekyll,sh
     echo $"Usage: {start|stop}"
     exit 1
     esac	
-```sh
+```
 
