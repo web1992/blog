@@ -68,7 +68,7 @@ public class DateUtil {
 
 **`DateUtil` 中的 `SimpleDateFormat` 是静态的，多线程共享的**
 
-**那么`impleDateFormat`中的 `Calendar` 也变成了共享的对象**
+**那么`SimpleDateFormat`中的 `Calendar` 也变成了共享的对象**
 
 **下面的方法 `calendar.setTime(date);` 这句代码修改了 `DateFormat`类中变量`calendar`属性状态**
 
