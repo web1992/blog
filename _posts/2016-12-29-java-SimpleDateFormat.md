@@ -67,8 +67,11 @@ public class DateUtil {
 ```
 
 **`DateUtil` 中的 `SimpleDateFormat` 是静态的，多线程共享的**
+
 **那么`impleDateFormat`中的 `Calendar` 也变成了共享的对象**
+
 **下面的方法 `calendar.setTime(date);` 这句代码修改了 `DateFormat`类中变量`calendar`属性状态**
+
 **那么就存在多线程环境中，同时操作`calendar`属性的值，就会产生线程安全的问题**
 
 ```java
