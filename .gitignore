@@ -5,3 +5,5 @@ _site/
 Gemfile.lock
 vendor/
 images_pub/
+.idea
+.impl
