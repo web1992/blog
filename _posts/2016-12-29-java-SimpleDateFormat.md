@@ -16,9 +16,9 @@ java SimpleDateFormat 线程不安全分析
 
 参考：
 
-[java 有状态，无状态的解释](http://peterwei.iteye.com/blog/960532)
+- [java 有状态，无状态的解释](http://peterwei.iteye.com/blog/960532)
 
-[SimpleDateFormat 例子](http://www.cnblogs.com/peida/archive/2013/05/31/3070790.html)
+- [SimpleDateFormat 例子](http://www.cnblogs.com/peida/archive/2013/05/31/3070790.html)
 
 
 `SimpleDateFormat`  是非线程安全的，在多线程环境中使用，会有问题。
