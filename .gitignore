@@ -6,4 +6,4 @@ Gemfile.lock
 vendor/
 images_pub/
 .idea
-.impl
+*.iml
