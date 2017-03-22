@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "我的2016"
+title:  "工程checkList"
 date:  2017-03-22 09:20:00 +0800
 categories: project
 tags: project
@@ -27,11 +27,6 @@ checkList
 
 - 6 完善的junit 测试
 
-- 7 日志打印规则 info error 
+- 7 日志打印规则 info error
 
 - 8
-
-
-
-
-
