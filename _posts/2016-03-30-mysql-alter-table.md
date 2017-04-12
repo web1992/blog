@@ -39,3 +39,12 @@ mysql 备忘
 ```sql
 	DROP TABLE IF EXISTS `t_my_table`;
 ```
+
+
+```sql
+
+   #查询表的信息
+   select * from information_schema.columns where table_name ='t_payment_ysepay_wap_req';
+   
+   select c.column_name as '列名',c.data_type as '类型',substring_index( substring_index(c.COLUMN_TYPE,'\)',1) ,'\(',-1)  as '长度',c.column_comment as '备注'   from information_schema.columns as c   where table_name ='t_payment_ysepay_wap_req';
+```
