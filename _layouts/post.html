@@ -9,9 +9,11 @@ layout: default
             {{ content }}
         </section>
         {% include article-footer.html page=page share=page.share %}
-	<!-- 分享插件必须在 article 标签中否则无效 -->
-	{% include share-duoshuo.html duoshuo_title=page.title  duoshuo_url=page.url duoshuo_content=page.excerpt %}
-	{% include duoshuo.html duoshuo_title=page.title  duoshuo_url=page.url %}
+        <!-- 分享插件必须在 article 标签中否则无效 -->
+        {% if site.duoshuo %}
+        {% include share-duoshuo.html duoshuo_title=page.title duoshuo_url=page.url duoshuo_content=page.excerpt %}
+        {% include duoshuo.html duoshuo_title=page.title duoshuo_url=page.url %}
+        {% endif %}
     </article>
 </div>
 {% if site.disqus %}
