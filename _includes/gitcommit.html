@@ -24,11 +24,17 @@
         list-style-type: none;
     }
 
-    body {
+/*    body {
         font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
         background: #dee1e3;
-    }
+    }*/
 
+    .site-content{
+        background: #dee1e3;
+    }
+    .site-content panel{
+        background: #FFFFFF;
+    }
     /** ====================
      * Lista de Comentarios
      =======================*/
@@ -317,8 +323,8 @@
                                 t +='<div class="comment-head">';
                                 t +='<span class="comment-name"><a href="'+comment.user.html_url+'">'+comment.user.login+'</a></span>';
                                 t +='<span>'+_date+'</span>';
-                                t +='<i class="fa fa-reply"></i>';
-                                t +='<i class="fa fa-heart"></i>';
+//                                t +='<i class="fa fa-reply"></i>';
+//                                t +='<i class="fa fa-heart"></i>';
                                 t +='</div>';
                                 t +='<div class="comment-content">';
                                 t += comment.body_html;
