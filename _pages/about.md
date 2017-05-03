@@ -18,7 +18,7 @@ share: false
 ####Enjoy! :smiley: :gift_heart:
 
 <br/>
-
+{% if site.duoshuo %}
 {% include duoshuo.html duoshuo_title=page.title  duoshuo_url=page.url %}
-
+{% endif %}
 
