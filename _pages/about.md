@@ -22,3 +22,5 @@ share: false
 {% include duoshuo.html duoshuo_title=page.title  duoshuo_url=page.url %}
 {% endif %}
 
+
+  Please add the following to your Gemfile to avoid polling fo
