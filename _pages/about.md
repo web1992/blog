@@ -23,4 +23,3 @@ share: false
 {% endif %}
 
 
-  Please add the following to your Gemfile to avoid polling fo
