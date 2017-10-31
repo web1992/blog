@@ -1,0 +1,86 @@
+Attaching to process ID 14853, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 24.79-b02
+Java System Properties:
+
+java.vendor = Oracle Corporation
+sun.java.launcher = SUN_STANDARD
+catalina.base = /opt/aldb-paymentbaofoo001-tomcat
+sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+catalina.useNaming = true
+os.name = Linux
+sun.boot.class.path = /usr/local/jdk1.7.0_79/jre/lib/resources.jar:/usr/local/jdk1.7.0_79/jre/lib/rt.jar:/usr/local/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/local/jdk1.7.0_79/jre/lib/jsse.jar:/usr/local/jdk1.7.0_79/jre/lib/jce.jar:/usr/local/jdk1.7.0_79/jre/lib/charsets.jar:/usr/local/jdk1.7.0_79/jre/lib/jfr.jar:/usr/local/jdk1.7.0_79/jre/classes
+java.util.logging.config.file = /opt/aldb-paymentbaofoo001-tomcat/conf/logging.properties
+com.sun.management.jmxremote =
+java.vm.specification.vendor = Oracle Corporation
+java.runtime.version = 1.7.0_79-b15
+user.name = root
+shared.loader =
+tomcat.util.buf.StringCache.byte.enabled = true
+user.language = zh
+java.naming.factory.initial = org.apache.naming.java.javaURLContextFactory
+sun.boot.library.path = /usr/local/jdk1.7.0_79/jre/lib/amd64
+com.sun.management.jmxremote.port = 50071
+java.version = 1.7.0_79
+java.util.logging.manager = org.apache.juli.ClassLoaderLogManager
+user.timezone = Asia/Shanghai
+sun.arch.data.model = 64
+java.endorsed.dirs = /opt/aldb-paymentbaofoo001-tomcat/endorsed
+java.rmi.server.randomIDs = true
+sun.cpu.isalist =
+sun.jnu.encoding = GBK
+file.encoding.pkg = sun.io
+package.access = sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.resources.,org.apache.tomcat.
+file.separator = /
+java.specification.name = Java Platform API Specification
+java.class.version = 51.0
+user.country = CN
+java.home = /usr/local/jdk1.7.0_79/jre
+java.vm.info = mixed mode
+os.version = 2.6.32-573.22.1.el6.x86_64
+sun.font.fontmanager = sun.awt.X11FontManager
+com.sun.management.jmxremote.ssl = false
+path.separator = :
+java.vm.version = 24.79-b02
+java.awt.printerjob = sun.print.PSPrinterJob
+sun.io.unicode.encoding = UnicodeLittle
+tomcat.util.scan.DefaultJarScanner.jarsToSkip = bootstrap.jar,commons-daemon.jar,tomcat-juli.jar,annotations-api.jar,el-api.jar,jsp-api.jar,servlet-api.jar,websocket-api.jar,catalina.jar,catalina-ant.jar,catalina-ha.jar,catalina-tribes.jar,jasper.jar,jasper-el.jar,ecj-*.jar,tomcat-api.jar,tomcat-util.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-jni.jar,tomcat-spdy.jar,tomcat-i18n-en.jar,tomcat-i18n-es.jar,tomcat-i18n-fr.jar,tomcat-i18n-ja.jar,tomcat-juli-adapters.jar,catalina-jmx-remote.jar,catalina-ws.jar,tomcat-jdbc.jar,tools.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,jstl.jar,taglibs-standard-spec-*.jar,geronimo-spec-jaxrpc*.jar,wsdl4j*.jar,ant.jar,ant-junit*.jar,aspectj*.jar,jmx.jar,h2*.jar,hibernate*.jar,httpclient*.jar,jmx-tools.jar,jta*.jar,log4j.jar,log4j-1*.jar,mail*.jar,slf4j*.jar,xercesImpl.jar,xmlParserAPIs.jar,xml-apis.jar,junit.jar,junit-*.jar,hamcrest*.jar,org.hamcrest*.jar,ant-launcher.jar,cobertura-*.jar,asm-*.jar,dom4j-*.jar,icu4j-*.jar,jaxen-*.jar,jdom-*.jar,jetty-*.jar,oro-*.jar,servlet-api-*.jar,tagsoup-*.jar,xmlParserAPIs-*.jar,xom-*.jar
+awt.toolkit = sun.awt.X11.XToolkit
+com.sun.management.jmxremote.authenticate = false
+package.definition = sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat.
+java.naming.factory.url.pkgs = org.apache.naming
+user.home = /root
+sun.rmi.transport.tcp.responseTimeout = 15000
+org.apache.catalina.startup.ContextConfig.jarsToSkip =
+java.specification.vendor = Oracle Corporation
+java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+java.vendor.url = http://java.oracle.com/
+org.apache.catalina.startup.TldConfig.jarsToSkip = tomcat7-websocket.jar
+java.vm.vendor = Oracle Corporation
+common.loader = ${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+java.runtime.name = Java(TM) SE Runtime Environment
+sun.java.command = org.apache.catalina.startup.Bootstrap start
+java.class.path = /opt/aldb-paymentbaofoo001-tomcat/bin/bootstrap.jar:/opt/aldb-paymentbaofoo001-tomcat/bin/tomcat-juli.jar
+java.vm.specification.name = Java Virtual Machine Specification
+java.vm.specification.version = 1.7
+catalina.home = /opt/aldb-paymentbaofoo001-tomcat
+sun.cpu.endian = little
+sun.os.patch.level = unknown
+java.io.tmpdir = /opt/aldb-paymentbaofoo001-tomcat/temp
+java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+server.loader =
+java.rmi.server.hostname = 10.27.158.61
+os.arch = amd64
+java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+java.ext.dirs = /usr/local/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext
+user.dir = /opt/aldb-paymentbaofoo001-tomcat/webapps
+line.separator =
+
+java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+file.encoding = GBK
+java.specification.version = 1.7
+
+VM Flags:
+
+-Djava.util.logging.config.file=/opt/aldb-paymentbaofoo001-tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1024m -Xmx1024m -Xss256k -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseParallelOldGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/dump -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/opt/dump/heap_trace_paymentbaofoo.txt -XX:NewSize=512m -XX:MaxNewSize=512m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=50071 -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=10.27.158.61 -Djava.endorsed.dirs=/opt/aldb-paymentbaofoo001-tomcat/endorsed -Dcatalina.base=/opt/aldb-paymentbaofoo001-tomcat -Dcatalina.home=/opt/aldb-paymentbaofoo001-tomcat -Djava.io.tmpdir=/opt/aldb-paymentbaofoo001-tomcat/temp
