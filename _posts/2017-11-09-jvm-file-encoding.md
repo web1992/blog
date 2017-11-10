@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "工程checkList"
+title:  "jvm 中文乱码的问题"
 date:  2017-11-09 18:56:00 +0800
 categories: ssh,java,file.encoding
 tags: ssh,java,file.encoding
-keywords: project,web1992
+keywords: ssh,java,file.encoding,web1992
 ---
 
 # jvm 中文乱码的问题
