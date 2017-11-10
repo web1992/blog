@@ -170,4 +170,4 @@ debug1: Sending env LANG = zh_CN.GBK
 
 - [一次编码问题的排查](https://hongjiang.info/java-file-encoding-and-os-locale/)
 - [jinfo](http://outofmemory.cn/java/jvm/jvm-tools-jps-jstat-jinfo-jmap-jhat-jstack)
-- [file.encoding form IBM](https://www.ibm.com/support/knowledgecenter/en/ssw_i5_54/rzaha/charenc.htm)
+- [file.encoding from IBM](https://www.ibm.com/support/knowledgecenter/en/ssw_i5_54/rzaha/charenc.htm)
