@@ -107,7 +107,7 @@ keywords: ssh,java,file.encoding,web1992
 
 发现 file.encoding = GBK 是gbk测试环境的是utf-8
 
-是用locale 查询系统编码,发现是utf-8
+是用locale 查询系统(当前回话或者运行环境)编码,发现是GBK
 
 ```shell
 $ locale
@@ -127,9 +127,7 @@ LC_IDENTIFICATION="zh_CN.GBK"
 LC_ALL=
 ```
 
-却发现当前的环境(ssh session会话)的编码是GBK
-
-查询系统的编码却是UTF-8,命令如下
+查询系统配置的编码却是UTF-8,命令如下
 
 ```shell
 $ cat  /etc/sysconfig/i18n
