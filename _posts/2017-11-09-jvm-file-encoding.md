@@ -109,32 +109,33 @@ keywords: ssh,java,file.encoding,web1992
 
 是用locale 查询系统编码,发现是utf-8
 
-```sh
+```shell
 $ locale
-LANG=zh_CN.UTF-8
-LC_CTYPE="zh_CN.UTF-8"
-LC_NUMERIC="zh_CN.UTF-8"
-LC_TIME="zh_CN.UTF-8"
-LC_COLLATE="zh_CN.UTF-8"
-LC_MONETARY="zh_CN.UTF-8"
-LC_MESSAGES="zh_CN.UTF-8"
-LC_PAPER="zh_CN.UTF-8"
-LC_NAME="zh_CN.UTF-8"
-LC_ADDRESS="zh_CN.UTF-8"
-LC_TELEPHONE="zh_CN.UTF-8"
-LC_MEASUREMENT="zh_CN.UTF-8"
-LC_IDENTIFICATION="zh_CN.UTF-8"
+LANG=zh_CN.GBK
+LC_CTYPE="zh_CN.GBK"
+LC_NUMERIC="zh_CN.GBK"
+LC_TIME="zh_CN.GBK"
+LC_COLLATE="zh_CN.GBK"
+LC_MONETARY="zh_CN.GBK"
+LC_MESSAGES="zh_CN.GBK"
+LC_PAPER="zh_CN.GBK"
+LC_NAME="zh_CN.GBK"
+LC_ADDRESS="zh_CN.GBK"
+LC_TELEPHONE="zh_CN.GBK"
+LC_MEASUREMENT="zh_CN.GBK"
+LC_IDENTIFICATION="zh_CN.GBK"
 LC_ALL=
 ```
 
-继续查看编码
-
-```sh
-echo $LANG
-zh_CN.GBK
-```
-
 却发现当前的环境(ssh session会话)的编码是GBK
+
+查询系统的编码却是UTF-8,命令如下
+
+```shell
+$ cat  /etc/sysconfig/i18n
+LANG="zh_CN.UTF-8"
+SYSFONT="latarcyrheb-sun16"
+```
 
 > 这里需要思考为什么jvm 的编码确实GBK，是在哪里，在何时改变的
 
