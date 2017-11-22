@@ -109,6 +109,8 @@ keywords: ssh,java,file.encoding,web1992
 
 是用locale 查询系统(当前回话或者运行环境)编码,发现是GBK
 
+也可以用[`export`](http://man.linuxde.net/export)查看系统的环境变量
+
 ```shell
 $ locale
 LANG=zh_CN.GBK
