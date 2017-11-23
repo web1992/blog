@@ -21,3 +21,13 @@ keywords: java,web1992,Exceptions
 使用`未检查异常`还是`已检查异常`
 
 > If a client can reasonably be expected to recover from an exception, make it a checked exception. If a client cannot do anything to recover from the exception, make it an unchecked exception
+
+常见的异常：
+
+- NullPointerException
+
+![](/blog_imasges/null-point-excepiton.png)
+
+- IOException
+
+![](/blog_imasges/io-exception.png)
