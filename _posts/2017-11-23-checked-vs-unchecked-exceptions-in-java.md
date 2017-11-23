@@ -3,7 +3,7 @@ layout: post
 title:  "Checked vs Unchecked Exceptions in Java"
 date:  2017-11-23 13:00:00 +0800
 categories: java,Exceptions
-tags: java,Exceptions
+tags: java
 keywords: java,web1992,Exceptions
 ---
 
