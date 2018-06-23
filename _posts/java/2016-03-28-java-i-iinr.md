@@ -45,7 +45,7 @@ keywords: java,web1992
 
 ## JVM Opcode Reference
 
-出现这个现象的原因是由 java 的编译之后的操作码决定的（ 编译之后的顺序不同）（JVM Opcode Reference）
+出现这个现象的原因是由 java 的编译之后的操作码决定的编译之后的顺序不同 JVM Opcode Reference
 
 运行下面命令，查看反编译之后的操作码（指令码）
 
@@ -53,32 +53,32 @@ keywords: java,web1992
 
 ## 代码 1 的反编译
 
-```java
+```
 Code:
-    0: iconst_0
-    1: istore_1
-    2: iload_1
-    3: iinc   1, 1
-    6: istore_1
-	7: getstatic  #2
-	10: iload_1
-	11: invokevirtual #3
-	14: return
+0: iconst_0
+1: istore_1
+2: iload_1
+3: iinc   1, 1
+6: istore_1
+7: getstatic  #2
+10: iload_1
+11: invokevirtual #3
+14: return
 ```
 
 ## 代码 2 的反编译：
 
-```java
+```
 Code:
-	0: iconst_0
-	1: istore_1
-	2: iinc          1, 1
-	5: iload_1
-	6: istore_1
-	7: getstatic     #2
-	10: iload_1
-	11: invokevirtual #3
-	14: return
+0: iconst_0
+1: istore_1
+2: iinc          1, 1
+5: iload_1
+6: istore_1
+7: getstatic     #2
+10: iload_1
+11: invokevirtual #3
+14: return
 ```
 
 ## 指令
@@ -88,7 +88,7 @@ Code:
 
 下面是 `jvm` 指令的含义
 
-```jvm
+```
    iconst_0 	// Pushing constants onto the stack
    istore_1 	// Pop stack into local var
    iload_1 		// Load integer from local variable n
@@ -108,31 +108,31 @@ Code:
 
 | index | stack | local var |
 | ----- | ----- | --------- |
-| 0     |       | [0](#)    |
+| 0     |       | 0         |
 | 1     |       |           |
 
 `iload_1` Load integer from local variable n
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [0](#) | [0](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 0     | 0         |
+| 1     |       |           |
 
 `iinc 1, 1` Increment local var.
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [0](#) | [1](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 0     | 1         |
+| 1     |       |           |
 
 `istore_1` Pop stack into local var
 
-**这里的  重点，用 stack 的至覆盖了局部变量的值，**
+**这里是重点，用 stack 的至覆盖了局部变量的值，**
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [0](#) | [0](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     |       | 0         |
+| 1     |       |           |
 
 `getstatic` 是调用方法
 
@@ -140,10 +140,10 @@ Code:
 
 从局部变量取值，局部变量的值是 0，那么`q++`的结果也就是`0`
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [0](#) | [0](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 0     | 0         |
+| 1     |       |           |
 
 ## 代码 2 的执行流程
 
@@ -158,29 +158,29 @@ Code:
 
 | index | stack | local var |
 | ----- | ----- | --------- |
-| 0     |       | [0](#)    |
+| 0     |       | 0         |
 | 1     |       |           |
 
 `iinc 1, 1` Increment local var.
 
 | index | stack | local var |
 | ----- | ----- | --------- |
-| 0     |       | [1](#)    |
+| 0     |       | 1         |
 | 1     |       |           |
 
 `iload_1` Load integer from local variable n
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [1](#) | [1](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 1     | 1         |
+| 1     |       |           |
 
 `istore_1` Pop stack into local var
 
-| index | stack  | local var |
-| ----- | ------ | --------- |
-| 0     | [1](#) | [1](#)    |
-| 1     |        |           |
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     |       | 1         |
+| 1     |       |           |
 
 `getstatic` 是调用方法
 
@@ -203,6 +203,6 @@ Code:
 
 ## 总结
 
-其实可以这样理解，Java 中为了实现 `i++` 与 `++i`的计算结果不同（语义），把`i++` 与 `++i` 编译成  顺序不同的操作码，来实现`i++` 与 `++i`的不同的语义
+其实可以这样理解，Java 中为了实现 `i++` 与 `++i`的计算结果不同语义，把`i++` 与 `++i` 编译成顺序不同的操作码，从而来实现`i++` 与 `++i`的不同的语义
 
 可参考：[ "栈帧、局部变量表、操作数栈 http://wangwengcn.iteye.com/blog/1622195"](http://wangwengcn.iteye.com/blog/1622195)
