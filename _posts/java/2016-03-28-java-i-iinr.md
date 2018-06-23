@@ -91,8 +91,8 @@ Code:
 ```
    iconst_0 	// Pushing constants onto the stack
    istore_1 	// Pop stack into local var
-   iload_1 		// Load integer from local variable n
-   iinc  		// Increment local var.
+   iload_1 	// Load integer from local variable n
+   iinc  	// Increment local var.
 ```
 
 ## 代码 1 的执行流程
