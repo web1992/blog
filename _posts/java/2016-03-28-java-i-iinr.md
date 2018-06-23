@@ -7,14 +7,13 @@ tags: java
 keywords: java,web1992
 ---
 
+# java i++ 与 ++i 的区别
 
-####java i++ 与 ++i 的区别
-
-本文从java的字节码角度，去探索一下i++ 与++i的本质的区别
+本文从 java 的字节码角度，去探索一下 i++ 与++i 的本质的区别
 
 <!--more-->
-####java代码1
 
+## java 代码 1
 
 ```java
 	public class Test {
@@ -25,119 +24,185 @@ keywords: java,web1992
 			q = q++;
 			System.out.println(q);
 	  }
-
 ```
 
->输出结果 0
->
+> 输出结果 0
 
-####java代码2
-                                                  
-                                                     
-```java                      
-        public class Test {                          
-                                                     
+## java 代码 2
+
+```java
+        public class Test {
+
            public static void main(String[] args) {  
-                                                     
-                        int q = 0;                   
-                        q = ++q;                     
-                        System.out.println(q);       
-          }                                          
-                                                     
-``` 
 
->输出结果 1
-> 
-
-####出现这个现象的原因是由java的编译之后的操作码决定的（JVM Opcode Reference）
-
-> 运行下面命令，查看反编译之后的操作码（指令码）
->
-> javap -c Test
->
-
-####代码1的反编译
-
-```java
-	Code:
-    	0: iconst_0
-    	1: istore_1
-    	2: iload_1
-    	3: iinc          1, 1
-    	6: istore_1
-    	7: getstatic     #2   
-   		10: iload_1
-   		11: invokevirtual #3   
-   		14: return
+                        int q = 0;
+                        q = ++q;
+                        System.out.println(q);
+          }
 ```
 
-####代码2的反编译： 
+> 输出结果 1
+
+## JVM Opcode Reference
+
+出现这个现象的原因是由 java 的编译之后的操作码决定的（ 编译之后的顺序不同）（JVM Opcode Reference）
+
+运行下面命令，查看反编译之后的操作码（指令码）
+
+`javap -c Test`
+
+## 代码 1 的反编译
 
 ```java
-	Code:
+Code:
+    0: iconst_0
+    1: istore_1
+    2: iload_1
+    3: iinc   1, 1
+    6: istore_1
+	7: getstatic  #2
+	10: iload_1
+	11: invokevirtual #3
+	14: return
+```
+
+## 代码 2 的反编译：
+
+```java
+Code:
 	0: iconst_0
 	1: istore_1
 	2: iinc          1, 1
 	5: iload_1
 	6: istore_1
-	7: getstatic     #2    
+	7: getstatic     #2
 	10: iload_1
-	11: invokevirtual #3    
-	14: return 
+	11: invokevirtual #3
+	14: return
 ```
-   
 
-                  
-反编译之后的代码区别：
+## 指令
 
-![](http://i.imgur.com/zlue6od.png)
-![](http://i.imgur.com/7aBMw2D.png)
+关于指令解释，可参照
+[JVM Opcode Reference](http://homepages.inf.ed.ac.uk/kwxm/JVM/codeByFn.html#A2b)
 
->关于iinc 指令解释，可参照 JVM Opcode Reference
->
->[http://homepages.inf.ed.ac.uk/kwxm/JVM/codeByFn.html#A2b](http://homepages.inf.ed.ac.uk/kwxm/JVM/codeByFn.html#A2b)
+下面是 `jvm` 指令的含义
 
->iinc
->
->**Increment local var.**
+```jvm
+   iconst_0 	// Pushing constants onto the stack
+   istore_1 	// Pop stack into local var
+   iload_1 		// Load integer from local variable n
+   iinc  		// Increment local var.
+```
 
-**iinc 的意思对本地变量进行自增+1，注意这里指的是本地变量 local var**
+## 代码 1 的执行流程
 
-**关于java中栈帧，参照下图：(可自行Google java操作数栈)**
+`iconst_0` Pushing constants onto the stack
 
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 0     |           |
+| 1     |       |           |
+
+`istore_1` Pop stack into local var
+
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     |       | [0](#)    |
+| 1     |       |           |
+
+`iload_1` Load integer from local variable n
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [0](#) | [0](#)    |
+| 1     |        |           |
+
+`iinc 1, 1` Increment local var.
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [0](#) | [1](#)    |
+| 1     |        |           |
+
+`istore_1` Pop stack into local var
+
+**这里的  重点，用 stack 的至覆盖了局部变量的值，**
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [0](#) | [0](#)    |
+| 1     |        |           |
+
+`getstatic` 是调用方法
+
+`iload_1` Load integer from local variable n
+
+从局部变量取值，局部变量的值是 0，那么`q++`的结果也就是`0`
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [0](#) | [0](#)    |
+| 1     |        |           |
+
+## 代码 2 的执行流程
+
+`iconst_0` Pushing constants onto the stack
+
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     | 0     |           |
+| 1     |       |           |
+
+`istore_1` Pop stack into local var
+
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     |       | [0](#)    |
+| 1     |       |           |
+
+`iinc 1, 1` Increment local var.
+
+| index | stack | local var |
+| ----- | ----- | --------- |
+| 0     |       | [1](#)    |
+| 1     |       |           |
+
+`iload_1` Load integer from local variable n
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [1](#) | [1](#)    |
+| 1     |        |           |
+
+`istore_1` Pop stack into local var
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [1](#) | [1](#)    |
+| 1     |        |           |
+
+`getstatic` 是调用方法
+
+`iload_1` Load integer from local variable n
+
+从局部变量取值，局部变量的值是 0，那么`++1`的结果也就是`1`
+
+| index | stack  | local var |
+| ----- | ------ | --------- |
+| 0     | [1](#) | [1](#)    |
+| 1     |        |           |
 
 **这里需要明白几个概念：**
 
-1. 局部变量表，用来存在局部变量的
- 
-2. 操作数栈 是进行算术运算的地方
+1.  局部变量表，用来存在局部变量的
 
-3. 在进行算术运算时，局部变量表与操作数栈是存在数据交互的
+2.  操作数栈 是进行算术运算的地方
+
+3.  在进行算术运算时，局部变量表与操作数栈是存在数据交互的
+
+## 总结
+
+其实可以这样理解，Java 中为了实现 `i++` 与 `++i`的计算结果不同（语义），把`i++` 与 `++i` 编译成  顺序不同的操作码，来实现`i++` 与 `++i`的不同的语义
 
 可参考：[ "栈帧、局部变量表、操作数栈 http://wangwengcn.iteye.com/blog/1622195"](http://wangwengcn.iteye.com/blog/1622195)
-> 以上是操作数栈的相关概念
-
-<br />
-> 下面对反编译的字节码的解释
-> 
-
-代码1的指令码执行顺序
-
-	2: iload_1				//  从局部变量表中，加载索引为1的local var 到`操作数栈`
-    3: iinc          1, 1   //  局部变量表中索引为1的local var自增+1,本地变量的值是1，此时 `操作数栈`依然为0
-    6: istore_1 		    //   pop int, store into local variable 1，从  `操作数栈`取值，存储在本地变量中，覆盖了原有已经自增+1的变量
-
->所以结果是：0
-
-
-<br />
-代码2的指令码执行顺序
-
-	2: iinc          1, 1 // 局部变量表中索引为1的local var自增+1,本地变量的值是1
-	5: iload_1			  // 从局部变量表中，加载索引为1的local var 到`操作数栈`，加载的数据值为1
-	6: istore_1			  // pop int, store into local variable 1，从  `操作数栈`取值，存储在本地变量中
-
->所以结果是：1
-
-
-
