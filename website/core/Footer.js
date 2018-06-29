@@ -34,6 +34,12 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
+            <h5>Links</h5>
+            <a href="https://docusaurus.io/">
+            docusaurus
+            </a>
+          </div>
+          <div>
             <h5>More</h5>
             <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
             <a href="https://github.com/web1992">GitHub</a>
@@ -51,7 +57,7 @@ class Footer extends React.Component {
         </section>
 
         <a
-          href="https://code.facebook.com/projects/"
+          href="https://docusaurus.io/"
           target="_blank"
           rel="noreferrer noopener"
           className="fbOpenSource">
