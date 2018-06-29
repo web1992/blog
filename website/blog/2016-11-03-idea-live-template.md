@@ -23,7 +23,7 @@ keywords: idea,web1992
 
 ![](https://i.imgur.com/2EN9kOb.gif)
 
-## 配置 idea:
+## 配置模版
 
 ```java
     public static void main(String[] args){
@@ -42,7 +42,7 @@ File > Settings > Editor > Live Templates
 
 ![](https://i.imgur.com/urHl2xJ.png)
 
-## 道出配置
+## 导出配置
 
 还可以配置导出，可以在其他电脑上时候，就不需要重新配置一遍了
 
