@@ -11,27 +11,33 @@
 /* List of projects/orgs using your project for the users page */
 const users = [
   {
-    caption: 'User1',
+    caption: "User1",
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
+    image: "/img/docusaurus.svg",
+    infoLink: "https://www.facebook.com",
+    pinned: true
+  }
 ];
 
 const siteConfig = {
-  title: 'web1992\'s blog' /* title for your website */,
-  tagline: 'Read Write Share',
-  url: 'https://your-docusaurus-test-site.com' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  title: "web1992's blog" /* title for your website */,
+  tagline: "Read Write Share",
+  url: "https://your-docusaurus-test-site.com" /* your website url */,
+  baseUrl: "/" /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
+  // for search
+  algolia: {
+    apiKey: "a531c94473320aaf6ccf8924c4835d13",
+    indexName: "web1992",
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
 
   // Used for publishing and more
-  projectName: 'web1992-blog',
-  organizationName: 'web1992',
+  projectName: "web1992-blog",
+  organizationName: "web1992",
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -41,28 +47,28 @@ const siteConfig = {
     // { doc: 'doc1', label: 'Docs' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
-    { blog: true, label: 'Blog' },
-    { page: 'about', label: 'About' },
+    { blog: true, label: "Blog" },
+    { page: "about", label: "About" },
     // Links to href destination
     { href: "https://github.com/web1992", label: "GitHub" },
     { search: true }
   ],
 
-  blogSidebarTitle: { default: 'Recent posts', all: 'All' },
+  blogSidebarTitle: { default: "Recent posts", all: "All" },
   //blogSidebarCount: 'ALL',
-  blogSidebarCount:20,
+  blogSidebarCount: 20,
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: "img/docusaurus.svg",
+  footerIcon: "img/docusaurus.svg",
+  favicon: "img/favicon.png",
 
   /* colors for website */
   colors: {
-    primaryColor: '#4285f4',
-    secondaryColor: '#205C3B',
+    primaryColor: "#4285f4",
+    secondaryColor: "#205C3B"
   },
 
   /* custom fonts for website */
@@ -78,26 +84,23 @@ const siteConfig = {
   },*/
 
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
-  copyright:
-    'Copyright © ' +
-    new Date().getFullYear() +
-    ' 京ICP备15055486号',
+  copyright: "Copyright © " + new Date().getFullYear() + " 京ICP备15055486号",
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     // theme: 'default',
-    theme: 'vs2015',
+    theme: "vs2015"
   },
 
   // Add custom scripts here that would be placed in <script> tags
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ["https://buttons.github.io/buttons.js"],
 
   /* On page navigation for the current documentation page */
-  onPageNav: 'separate',
+  onPageNav: "separate",
 
   /* Open Graph and Twitter card images */
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: "img/docusaurus.png",
+  twitterImage: "img/docusaurus.png"
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
