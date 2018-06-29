@@ -42,9 +42,9 @@ const siteConfig = {
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
+    { page: 'about', label: 'About' },
     // Links to href destination
     { href: "https://github.com/web1992", label: "GitHub" },
-    { page: 'about', label: 'About' },
     { search: true }
   ],
 
