@@ -13,8 +13,10 @@ authorGITHUBID: web1992
 
 # jvm 中文乱码的问题
 
-一次项目发布之后，之前好好的http 接口，报签名错误，经排查是中文乱码引起的，继续排查（已经沟通过没有人修改过服务的编码）
+一次项目发布之后，之前好好的 http 接口，报签名错误，经排查是中文乱码引起的，继续排查（已经沟通过没有人修改过服务的编码）
+
 <!--truncate-->
+
 使用`jinfo`可以查询`jvm`虚拟机的各项参数信息
 
 ## jinfo
@@ -23,7 +25,7 @@ authorGITHUBID: web1992
  `jinfo pid ` # pid 为Java的进程id
 ```
 
-会出现下面的log
+会出现下面的 log
 
 ```log
     $ jinfo 16051
@@ -37,7 +39,7 @@ authorGITHUBID: web1992
     sun.rmi.transport.tcp.responseTimeout = 15000
     java.vm.version = 24.79-b02
     sun.boot.library.path = /usr/local/jdk1.7.0_79/jre/lib/amd64
-    shared.loader = 
+    shared.loader =
     java.vendor.url = http://java.oracle.com/
     java.vm.vendor = Oracle Corporation
     path.separator = :
@@ -55,7 +57,7 @@ authorGITHUBID: web1992
     java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
     os.arch = amd64
     java.endorsed.dirs = /opt/tomcat05/endorsed
-    line.separator = 
+    line.separator =
 
     java.io.tmpdir = /opt/tomcat05/temp
     java.vm.specification.vendor = Oracle Corporation
@@ -70,7 +72,7 @@ authorGITHUBID: web1992
     sun.management.compiler = HotSpot 64-Bit Tiered Compilers
     os.version = 2.6.32-696.3.2.el6.x86_64
     user.home = /home/dev
-    org.apache.catalina.startup.ContextConfig.jarsToSkip = 
+    org.apache.catalina.startup.ContextConfig.jarsToSkip =
     user.timezone = PRC
     catalina.useNaming = true
     java.awt.printerjob = sun.print.PSPrinterJob
@@ -92,7 +94,7 @@ authorGITHUBID: web1992
     java.version = 1.7.0_79
     java.ext.dirs = /usr/local/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext
     sun.boot.class.path = /usr/local/jdk1.7.0_79/jre/lib/resources.jar:/usr/local/jdk1.7.0_79/jre/lib/rt.jar:/usr/local/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/local/jdk1.7.0_79/jre/lib/jsse.jar:/usr/local/jdk1.7.0_79/jre/lib/jce.jar:/usr/local/jdk1.7.0_79/jre/lib/charsets.jar:/usr/local/jdk1.7.0_79/jre/lib/jfr.jar:/usr/local/jdk1.7.0_79/jre/classes
-    server.loader = 
+    server.loader =
     java.vendor = Oracle Corporation
     catalina.base = /opt/tomcat05
     file.separator = /
@@ -102,16 +104,18 @@ authorGITHUBID: web1992
     sun.font.fontmanager = sun.awt.X11FontManager
     sun.cpu.endian = little
     package.access = sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.resources.,org.apache.tomcat.
-    sun.cpu.isalist = 
+    sun.cpu.isalist =
 
     VM Flags:
 
     -Djava.util.logging.config.file=/opt/tomcat05/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1024m -Xmx1024m -Xss256k -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseParallelOldGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/dev/dump -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/home/dev/dump/heap_trace_tomcat05.txt -XX:NewSize=512m -XX:MaxNewSize=512m -agentlib:jdwp=transport=dt_socket,address=5959,suspend=n,server=y -Djava.endorsed.dirs=/opt/tomcat05/endorsed -Dcatalina.base=/opt/tomcat05 -Dcatalina.home=/opt/tomcat05 -Djava.io.tmpdir=/opt/tomcat05/temp
 ```
 
-发现 file.encoding = GBK 是gbk测试环境的是utf-8
+## 问题
 
-是用locale 查询系统(当前回话或者运行环境)编码,发现是GBK
+发现 file.encoding = GBK 是 gbk 测试环境的是 utf-8
+
+是用 locale 查询系统(当前回话或者运行环境)编码,发现是 GBK
 
 也可以用[`export`](http://man.linuxde.net/export)查看系统的环境变量
 
@@ -133,7 +137,7 @@ LC_IDENTIFICATION="zh_CN.GBK"
 LC_ALL=
 ```
 
-查询系统配置的编码却是UTF-8,命令如下
+查询系统配置的编码却是 UTF-8,命令如下
 
 ```shell
 $ cat  /etc/sysconfig/i18n
@@ -141,18 +145,20 @@ LANG="zh_CN.UTF-8"
 SYSFONT="latarcyrheb-sun16"
 ```
 
-> 这里需要思考为什么jvm 的编码确实GBK，是在哪里，在何时改变的
+## 解决
 
-然后继续苦逼思考，直到看到了这篇文章[link](https://hongjiang.info/java-file-encoding-and-os-locale/),知道当我们用ssh 登录linux 服务器的时候，会把当前系统的编码发送
+这里需要思考为什么 jvm 的编码确实 GBK，是在哪里，在何时改变的
+
+然后继续苦逼思考，直到看到了这篇文章[link](https://hongjiang.info/java-file-encoding-and-os-locale/),知道当我们用 ssh 登录 linux 服务器的时候，会把当前系统的编码发送
 带目标服务器。
 
-ssh -v 可以输出ssh debug 信息
+ssh -v 可以输出 ssh debug 信息
 
 ```sh
 ssh -v dev@ip
 ```
 
-发现下面的log
+发现下面的 log
 
 ```log
 ##..... 省略其它日志
@@ -161,16 +167,16 @@ debug1: Sending environment.
 debug1: Sending env LANG = zh_CN.GBK
 ```
 
-现在可以确定，是客户端的系统编码是GBK，当用ssh 登录远程的Linux时，会把当前的GBK发送到远程，导致远程的系统的会话（session）的编码是GBK
-导致jvm 系统启动的时候，使用了GBK编码。
+现在可以确定，是客户端的系统编码是 GBK，当用 ssh 登录远程的 Linux 时，会把当前的 GBK 发送到远程，导致远程的系统的会话（session）的编码是 GBK
+导致 jvm 系统启动的时候，使用了 GBK 编码。
 
 ## 总结
 
-- 1 jinfo 可以查询jvm参数信息， 十分有用
-- 2 ssh -v 查询debug 信息
-- 3 之前看到别人在用shell 脚本 启动（或者执行java命令）JVM时，会有 `export LANG="en_US.UTF-8"` 类似的命令，是为了保证当前环境的编码是自己想要的编码
+- 1 jinfo 可以查询 jvm 参数信息， 十分有用
+- 2 ssh -v 查询 debug 信息
+- 3 之前看到别人在用 shell 脚本 启动（或者执行 java 命令）JVM 时，会有 `export LANG="en_US.UTF-8"` 类似的命令，是为了保证当前环境的编码是自己想要的编码
 - 4 可以指定`tomact`的编码为`UTF-8`,避免导致系统编码的改变，导致中文乱码的发生
-- 5 在处理Java的文件的（和流有关的），最好指定定编码，避免导致系统编码的改变，导致中文乱码的发生
+- 5 在处理 Java 的文件的（和流有关的），最好指定定编码，避免导致系统编码的改变，导致中文乱码的发生
 - 6 思考，思考，思考
 
 ## 参考文章

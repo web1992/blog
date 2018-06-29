@@ -7,10 +7,11 @@ tags: ant
 keywords: ant,Jekyll,web1992
 ---
 
+## ant
 
-> ant jar (使用ant打包`java`项目为jar文件)
+ant jar (使用 ant 打包`java`项目为 jar 文件)
 
-<!--more-->
+<!--truncate-->
 
 ```xml
 	<!--ant_project public define-->
@@ -25,4 +26,3 @@ keywords: ant,Jekyll,web1992
 		<jar destfile="生成jar包" jarfile="${weblib.dir}/${ant_project.jarName}" basedir="${ant_project.bin}"></jar>
 	</target>
 ```
-

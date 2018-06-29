@@ -7,22 +7,23 @@ tags: apache
 keywords: apache, Linux,Jekyll,web1992
 ---
 
-> apache 通配符的使用
+# apache 通配符的使用
 
-<!--more-->
+<!--truncate-->
 
-> 
-> 用法 http://127.0.0.1/server1/action1
-> 
-> 那么在 下面的配置中 
-> 
-> %0 就是 server1
-> 
-> %1 就是 action1
+## URL
 
-> 配置如下:
+如果存在下面的 URL
 
-```xml 
+- http://127.0.0.1/server1/action1
+
+那么在 下面的配置中
+%0 就是 server1
+%1 就是 action1
+
+## 配置
+
+```xml
 	NameVirtualHost 127.0.0.1
 	<VirtualHost *:81>
 	        ServerName  %0
@@ -33,9 +34,3 @@ keywords: apache, Linux,Jekyll,web1992
 	        #CustomLog "/data/www_log/"%1"-access_log" common
 	</VirtualHost>
 ```
-
-
-
-
-
-

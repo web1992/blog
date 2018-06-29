@@ -7,43 +7,35 @@ tags: java
 keywords: java,web1992
 ---
 
-java jstack dump log 分析记录
+## java jstack dump log 分析记录
 
+<!--truncate-->
 
-<!--more-->
+## 问题描述
 
-**问题描述**
-
-
-在一次开发中，出现了前端调用http接口无法响应的问题
+在一次开发中，出现了前端调用 http 接口无法响应的问题
 
 （重启可以解决现在的问题，但是在运行一段时间之后，此接口依然会失去响应，产生假死的现象）
 
-其他接口都可以正常的调用，除了这个接口（这里称这个接口叫做A接口）
+其他接口都可以正常的调用，除了这个接口（这里称这个接口叫做 A 接口）
 
-
-**排除死循环**
-
+## 排除死循环
 
 根据经验分析`有可能是A接口代码死循环导致的`（查询代码流，排除此项可能）
 
-**排除死锁**
-
+## 排除死锁
 
 代码业务简单，没有用到锁相关的技术（排除此项可能）
 
-**redis**
+## redis
 
-
-分析此接口A与其他代码的不同的地方，就是用了`redis` 缓存，此时依然不知道`redis`哪里出了问题
+分析此接口 A 与其他代码的不同的地方，就是用了`redis` 缓存，此时依然不知道`redis`哪里出了问题
 
 暂时定位问题在`redis`,继续跟踪`redis`哪里出现了问题
 
+接下来就需要分析 java 进程中，线程的状态了。不然很难确定问题所在
 
-
-接下来就需要分析java进程中，线程的状态了。不然很难确定问题所在
-
-**使用`jstack` 命令**
+## 使用`jstack` 命令
 
 ```sh
 	jstack -l 9532>java_thread_dump.log
@@ -51,22 +43,21 @@ java jstack dump log 分析记录
 	#9532 为java进程的ID
 ```
 
-[jstack命令用法](http://www.cnblogs.com/nexiyi/p/java_thread_jstack.html)
+[jstack 命令用法](http://www.cnblogs.com/nexiyi/p/java_thread_jstack.html)
 
-此命令可以打印出`9532`进程中，所有的线程的状态,日志文件在这里可以找到: [jstack的日志](https://web1992.cn/blog/assets/java_thread_dump.log "日志")
+此命令可以打印出`9532`进程中，所有的线程的状态,日志文件在这里可以找到: [jstack 的日志](https://web1992.cn/blog/assets/java_thread_dump.log "日志")
 
->项目采用spring mvc 作为控制层，http 的入口都是 Controller，所以我先统计下Controller在 jstack dump日志中出现的次数
+项目采用 spring mvc 作为控制层，http 的入口都是 Controller，所以我先统计下 Controller 在 jstack dump 日志中出现的次数
 
-
-	cat java_thread_dump.log |grep Controller |uniq -c
+```sh
+    cat java_thread_dump.log |grep Controller |uniq -c
+```
 
 出现以下结果：
 
-	40 	at com.ejavashop.web.rest.order.controller.OrderRestController.submitOrder(OrderRestController.java:138)
+    40 	at com.ejavashop.web.rest.order.controller.OrderRestController.submitOrder(OrderRestController.java:138)
 
-可以看到这个控制器出现了40次！！！！激动啊，问题所在点马上知道了
-
-
+可以看到这个控制器出现了 40 次！！！！
 
 ```java
 		- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
@@ -85,7 +76,6 @@ java jstack dump log 分析记录
 		at com.ejavashop.web.rest.order.controller.OrderRestController.submitOrder(OrderRestController.java:138)
 ```
 
-
 继续追踪堆栈信息,发现了这一行代码
 
 ```java
@@ -94,45 +84,37 @@ java jstack dump log 分析记录
 
 分析所有等待的线程
 
-```java
-	cat java_thread_dump.log |grep "parking to wait for" |uniq -c
+```sh
+cat java_thread_dump.log |grep "parking to wait for" |uniq -c
 ```
 
 结果:
 
 ```java
-	40 	- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+40 	- parking to wait for  <0x0000000088b715a8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
 ```
 
-`LinkedBlockingDeque`  队列，阻塞队列！！！，很有可能是这个队列一直在阻塞，等待获取资源
+`LinkedBlockingDeque` 队列，阻塞队列！！！，很有可能是这个队列一直在阻塞，等待获取资源
 
 回头继续查看代码，原来`redis`资源用了阻塞队列，把资源放在`队列`中进行获取资源，如果资源获取不到，就一直阻塞到有资源为止
 
->(redis在项目里面作为缓存使用，基于j-redis 开发的java API)
+> (redis 在项目里面作为缓存使用，基于 j-redis 开发的 java API)
 
-继续思考队列中的资源去哪里了，分析代码之后，redis的资源在take 之后，需要手动的把资源放回队列中，不然使用过之后的资源无法回收
+继续思考队列中的资源去哪里了，分析代码之后，redis 的资源在 take 之后，需要手动的把资源放回队列中，不然使用过之后的资源无法回收
 
 新的线程也无法从队列中获取新的资源，导致新来的线程一直阻塞
 
-**问题最终确定！！！**
+问题最终确定！！！
 
-解决问题
------
+## 解决问题
 
-分析代码redis的资源释放回收，是通过close 进行释放的，在应用代码中，没有调用close方法，导致此问题的发生。
+分析代码 redis 的资源释放回收，是通过 close 进行释放的，在应用代码中，没有调用 close 方法，导致此问题的发生。
 
 在代码中调用 close 方法即可.
 
-
-小结
----
+## 小结
 
 - 1 问题的的解决，仅仅添加了一行代码，而问题的查找过程确是十分的复杂的
-- 2 问题现象>定位（分析）问题log> 分析代码+log >确定问题>解决问题
-- 3 项目没有使用文档，都是复制别人的代码，在复制别人的代码，遗漏了close 方法(认真啊)
-- 4 java中的资源大多数都需要自动关闭的，例如：IO流,数据库连接，stock连接等等，后续使用需要注意
- 
-
-
-
-
+- 2 问题现象>定位（分析）问题 log> 分析代码+log >确定问题>解决问题
+- 3 项目没有使用文档，都是复制别人的代码，在复制别人的代码，遗漏了 close 方法(认真啊)
+- 4 java 中的资源大多数都需要自动关闭的，例如：IO 流,数据库连接，stock 连接等等，后续使用需要注意

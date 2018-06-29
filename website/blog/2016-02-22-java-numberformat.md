@@ -7,12 +7,9 @@ tags: java
 keywords: java,web1992
 ---
 
-> java 中处理小数技巧备忘
->
-> NumberFormat 函数方便的处理小数
->
-> 位于 java.text 包下的工具类
->
+# NumberFormat
+
+java 中处理小数技巧备忘`NumberFormat`函数方便的处理小数,位于 java.text 包下的工具类
 
 ```java
 	NumberFormat num = NumberFormat.getPercentInstance();

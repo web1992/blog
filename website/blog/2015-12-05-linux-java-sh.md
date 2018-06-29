@@ -7,9 +7,9 @@ tags: java
 keywords: web1992,Java, Linux,Jekyll,sh
 ---
 
-> `java` sh启动脚本
+# `java`shell 启动脚本
 
-<!--more-->
+<!--truncate-->
 
 ```sh
     #!/bin/bash
@@ -26,7 +26,7 @@ keywords: web1992,Java, Linux,Jekyll,sh
     echo "$pid" > pid
     echo "GameServer1 Process Id:$pid"
     }
-     
+
     stop(){
     #pid=`cat pid`
     pid=`ps aux |grep java |awk '{if($12=="-Dserver.name=my_server") print $2}'`
@@ -34,7 +34,7 @@ keywords: web1992,Java, Linux,Jekyll,sh
     kill $pid
     rm -f pid
     }
-     
+
     case "$1" in
       start)
     stop
@@ -46,6 +46,5 @@ keywords: web1992,Java, Linux,Jekyll,sh
       *)
     echo $"Usage: {start|stop}"
     exit 1
-    esac	
+    esac
 ```
-

@@ -7,21 +7,22 @@ tags: python
 keywords: python,web1992
 ---
 
-###  `python` 日期格式化例子
-<!--more-->
+## `python` 日期格式化例子
+
+<!--truncate-->
 
 ```python
 	# encoding=utf-8
 	import sys
 	import datetime
-	
+
 	reload(sys)
 	sys.setdefaultencoding('utf-8')
 	__author__ = 'web'
 	# Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
-	
-	
-	
+
+
+
 	def get_data_name():
 	    expire_time = '2016_02_24'
 	    _start = datetime.datetime.strptime(expire_time, '%Y_%m_%d');
@@ -35,10 +36,8 @@ keywords: python,web1992
 	    print list1
 	    #['2016_02_24', '2016_02_25']
 	    return list1
-	
-	
+
+
 	if __name__ == '__main__':
 	    get_data_name()
-	   
 ```
-	

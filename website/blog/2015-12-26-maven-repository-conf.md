@@ -7,10 +7,9 @@ tags: maven
 keywords: maven,Jekyll,web1992
 ---
 
+# maven 的仓库配置
 
-> maven repository config (maven 的仓库配置)
-
-<!--more-->
+<!--truncate-->
 
 ```xml
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -30,7 +29,7 @@ keywords: maven,Jekyll,web1992
 	                <name>User Project Release</name>
 	                <url>http://nurl/public</url>
 	            </repository>
-	
+
 	            <snapshotRepository>
 	                <id>nexus-snapshots</id>
 	                <name>User Project SNAPSHOTS</name>
@@ -67,15 +66,15 @@ keywords: maven,Jekyll,web1992
 	        </pluginRepositories>
 	    </profile>
 	</profiles>
-	
+
 	<!--  激活仓库的配置 -->
 	<activeProfiles>
 	<!-- <activeProfile>nexus</activeProfile>
 	 -->
 	</activeProfiles>
-	
+
 	<build>
-	    <plugins>    
+	    <plugins>
 	         <!-- 更改maven默认的打包目录 -->
 	        <plugin>
 	           <artifactId>maven-war-plugin</artifactId>
@@ -83,8 +82,7 @@ keywords: maven,Jekyll,web1992
 	               <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
 	               <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
 	           </configuration>
-	       </plugin>      
+	       </plugin>
 	    </plugins>
 	</build>
 ```
-	

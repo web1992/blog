@@ -7,15 +7,14 @@ tags: java
 keywords: java,web1992
 ---
 
-### java 反射例子
-> 一个java反射使用例子，备忘
-> 
-> 使用反射改变对象私有属性的值(spring IOC就是通过类的反射技术，动态的注入属性的)
+# java 反射例子
 
-<!--more-->
-	
+一个 java 反射使用例子，备忘
+使用反射改变对象私有属性的值(spring IOC 就是通过类的反射技术，动态的注入属性的)
+
+<!--truncate-->
+
 ```java
-	
 	import java.lang.reflect.Field;
 
 	/**
@@ -67,14 +66,13 @@ keywords: java,web1992
 					'}';
 		}
 	}
-	
-	   
 ```
-	
-	
-输出
 
-	before value=1
-	before value=null
-	after value=2
-	after value=Actor{name='Lucy'}
+## 输出
+
+```
+    before value=1
+    before value=null
+    after value=2
+    after value=Actor{name='Lucy'}
+```

@@ -7,18 +7,18 @@ tags: python
 keywords: jekyll,web1992
 ---
 
->使用`python`连接`mysql`数据库
+## 使用`python`连接`mysql`数据库
 
-<!--more-->
+<!--truncate-->
+
 ```python
-	
 	# encoding=utf-8
 	import sys
 	reload(sys)
 	sys.setdefaultencoding('utf-8')
 	__author__ = 'web'
 	import MySQLdb
-	
+
 	def get_mysql_conn(dbIp, dbName):
 	    """
 	    :desc 获取数据链接
@@ -33,8 +33,8 @@ keywords: jekyll,web1992
 	    # print dbIp,dbName
 	    # print  dbIp
 	    return MySQLdb.connect(host=str(dbIp), user=user, passwd=pwd, db=dbName, port=3306, charset='utf8')
-	
-	
+
+
 	def get_user_pwd_from_file():
 	    """
 	    1，读取配置文字中的用户名&密码
@@ -55,10 +55,10 @@ keywords: jekyll,web1992
 	                 _pwd = _data.split('=')[1]
 	                 _d_pwd = {'password':_pwd}
 	                 _d.update(_d_pwd)
-	
+
 	        # print _d
 	        return _d
-	
+
 	def get_data_from_db(server_name, db_ip,dbName,sql):
 	    '''
 	        执行SQL 并返回结果集
@@ -81,12 +81,11 @@ keywords: jekyll,web1992
 	        cur.close()
 	        conn.close()
 	        return  rows
-	
+
 	    except MySQLdb.Error, e:
 	        print "Mysql Error %d: %s" % (e.args[0], e.args[1])
-	
-	
+
+
 	if __name__=='__main__':
 	    pass
-	
 ```

@@ -7,28 +7,25 @@ tags: java
 keywords: java,web1992
 ---
 
+## java SimpleDateFormat 线程不安全分析
 
-java SimpleDateFormat 线程不安全分析
----
+<!--truncate-->
 
-<!--more-->
-
-
-参考：
+## 参考
 
 - [java 有状态，无状态的解释](http://peterwei.iteye.com/blog/960532)
 
 - [SimpleDateFormat 例子](http://www.cnblogs.com/peida/archive/2013/05/31/3070790.html)
 
-
-`SimpleDateFormat`  是非线程安全的，在多线程环境中使用，会有问题。
+`SimpleDateFormat` 是非线程安全的，在多线程环境中使用，会有问题。
 
 `SimpleDateFormat` 是线程不安全的原因是:
 
 代码中修改了变量`protected Calendar calendar;` 的值
 
-那么在多线程中，set,get的时候，就会存在问题。
+那么在多线程中，set,get 的时候，就会存在问题。
 
+## 分析
 
 看下 `SimpleDateFormat` 的类结构
 
@@ -43,22 +40,23 @@ public abstract class DateFormat extends Format {
 
 
     protected Calendar calendar;
-    
+
 }
 ```
 
+## demo
 
 一个静态日期工具类：(这个工具类是线程不安全的)
 
 ```java
 public class DateUtil {
-    
+
     private static final  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    
+
     public static  String formatDate(Date date)throws ParseException{
         return sdf.format(date);
     }
-    
+
     public static Date parse(String strDate) throws ParseException{
 
         return sdf.parse(strDate);
@@ -82,16 +80,8 @@ public class DateUtil {
         }
 ```
 
-在多线程中如果`线程1`执行了  calendar.setTime(date); `挂起`，`线程2`再次执行  calendar.setTime(date);
+在多线程中如果`线程1`执行了 calendar.setTime(date); `挂起`，`线程2`再次执行 calendar.setTime(date);
 
 `线程2`挂起，`线程1`继续执行
 
-那么在后续使用Calendar进行日期格式化的时候，就会出现相同的日期，导致错误。
-
-
-
-
-
-
-
-
+那么在后续使用 Calendar 进行日期格式化的时候，就会出现相同的日期，导致错误。
