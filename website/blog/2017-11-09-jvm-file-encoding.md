@@ -5,12 +5,16 @@ date:  2017-11-09 18:56:00 +0800
 categories: ssh,java,file.encoding
 tags: java
 keywords: ssh,java,file.encoding,web1992
+sidebar_label:
+author:web1992
+authorURL: http://github.com/web1992
+authorGITHUBID: web1992
 ---
 
 # jvm 中文乱码的问题
 
 一次项目发布之后，之前好好的http 接口，报签名错误，经排查是中文乱码引起的，继续排查（已经沟通过没有人修改过服务的编码）
-
+<!--truncate-->
 使用`jinfo`可以查询`jvm`虚拟机的各项参数信息
 
 ## jinfo

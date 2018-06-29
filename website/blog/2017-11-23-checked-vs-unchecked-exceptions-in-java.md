@@ -5,10 +5,13 @@ date:  2017-11-23 13:00:00 +0800
 categories: java,Exceptions
 tags: java
 keywords: java,web1992,Exceptions
+sidebar_label:
+author:web1992
+authorGITHUBID: web1992
 ---
 
 # Checked vs Unchecked Exceptions in Java
-
+<!--truncate-->
 异常继承图：
 
 ![](/blog_imasges/java-exception.png)
