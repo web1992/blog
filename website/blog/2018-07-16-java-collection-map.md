@@ -38,7 +38,7 @@ Map 的集合实现可以分三类：
 自己动手画了一个hash冲突产生的图（假设k3与k5产生了hash冲突）
 如果产生了hash冲突，那么`HashMap`中的元素按照链表的方式存储
 
-![hash-demo](https://github.com/web1992/read/blob/master/java/images/hash-demo.png)
+![hash-demo](/img/hash-demo.png)
 
 ```java
 key --hash function--> hashcode ----index function--> 索引 ----> 放入bucketsz中(放入buckets是一个Map.Entry 数组)
