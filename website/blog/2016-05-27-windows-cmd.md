@@ -11,14 +11,17 @@ windows 常用命令
 
 <!--more-->
 
-```sh
+```bat
 
-	netstat -ano  |findstr 3306
-		
-	tasklist
-	tasklist |findstr mysql
-		
-	taskkill /T /F /PID 6376
-	## /T 所有子进程
-	## /F 强制杀
+netstat -ano  |findstr 3306
+
+tasklist
+tasklist |findstr mysql
+
+taskkill /T /F /PID 6376
+## /T 所有子进程
+## /F 强制杀
+
+## 文件md5
+certutil -hashfile filename MD5
 ```
