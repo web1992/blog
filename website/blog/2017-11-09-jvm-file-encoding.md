@@ -22,7 +22,7 @@ authorGITHUBID: web1992
 ## jinfo
 
 ```sh
- `jinfo pid ` # pid 为Java的进程id
+ jinfo pid # pid 为Java的进程id
 ```
 
 会出现下面的 log
