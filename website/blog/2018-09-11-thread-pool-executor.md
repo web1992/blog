@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "ThreadPoolExecutor 使用"
@@ -17,7 +16,7 @@ authorGITHUBID: web1992
 
 ## 类图
 
-![ThreadPoolExecutor](https://github.com/web1992/read/blob/master/java/images/ThreadPoolExecutor.png)
+![ThreadPoolExecutor](/img/ThreadPoolExecutor.png)
 
 ## 设计目的
 
