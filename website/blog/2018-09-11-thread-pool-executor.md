@@ -12,12 +12,12 @@ authorGITHUBID: web1992
 
 # ThreadPoolExecutor
 
-- [draw.io file](./draw.io/ThreadPoolExecutor.xml)
+- [draw.io file](https://github.com/web1992/read/blob/master/java/draw.io/ThreadPoolExecutor.xml)
 - [from oracle](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html)
 
 ## 类图
 
-![ThreadPoolExecutor](./images/ThreadPoolExecutor.png)
+![ThreadPoolExecutor](https://github.com/web1992/read/blob/master/java/images/ThreadPoolExecutor.png)
 
 ## 设计目的
 
