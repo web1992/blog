@@ -127,6 +127,19 @@ const FeatureCallout = props => (
   </div>
 );
 
+const GithubLink = props => (
+  <div
+    className="productShowcaseSection paddingBottom"
+    style={{textAlign: 'center'}}>
+    <MarkdownBlock>
+      `Read` `Write` `Share`
+
+      [日常活跃看这里](https://github.com/web1992/read)
+
+    </MarkdownBlock>
+  </div>
+);
+
 const LearnHow = props => (
   <Block background="light">
     {[
@@ -208,7 +221,7 @@ class Index extends React.Component {
           <TryOut />
           <Description />
           <Showcase language={language} /> */}
-          <LearnHow />
+          <GithubLink />
         </div>
       </div>
     );
