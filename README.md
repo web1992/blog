@@ -1,6 +1,6 @@
 # About me
 
-[我的博客](http://blog.web1992.cn/ "我的博客")
+[我的博客](https://blog.web1992.cn/ "我的博客")
 
 :email: web1992@foxmail.com
 
