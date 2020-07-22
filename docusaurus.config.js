@@ -14,14 +14,14 @@ module.exports = {
         src: 'https://avatars3.githubusercontent.com/u/6828647?s=60&v=4',
       },
       links: [
+        {to: 'blog', label: 'Blog', position: 'left'},
+        {to: '/blog/tags', label: '归档', position: 'left'},
         {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {to: '/blog/tags', label: '归档', position: 'left'},
         {
           href: 'https://github.com/web1992/read',
           label: 'GitHub',
