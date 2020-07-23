@@ -25,6 +25,11 @@ const links = [
     title: 'ReentrantLock 简介',
     url: '/blog/reentrant-lock',
   },
+  {
+    title: 'HashMap 的初始化和扩容',
+    url: '/blog/hashmap-init-and-resize',
+  },
+  //hashmap-init-and-resize
 ];
 
 function Links({url, title}) {
