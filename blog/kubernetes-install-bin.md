@@ -2,9 +2,9 @@
 id: kubernetes-install-bin
 title: k8s 集群的二进制安装
 author: web1992
-author_title: web1992
+author_title: Code of Java
 author_url: https://github.com/web1992
-author_image_url: https://avatars3.githubusercontent.com/u/6828647?s=60&v=4
+author_image_url: img/avatars3.jpeg
 tags: [k8s]
 ---
 
