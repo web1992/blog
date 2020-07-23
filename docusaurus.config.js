@@ -3,7 +3,7 @@ module.exports = {
   tagline: '西西 Blog',
   url: 'https://blog.web1992.cn',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/avatars3.jpeg',
   organizationName: 'web1992', // Usually your GitHub org/user name.
   projectName: 'read', // Usually your repo name.
   themeConfig: {
@@ -11,7 +11,7 @@ module.exports = {
       title: '西西·Blog',
       logo: {
         alt: 'My Site Logo',
-        src: 'https://avatars3.githubusercontent.com/u/6828647?s=60&v=4',
+        src: 'img/avatars3.jpeg',
       },
       links: [
         {to: 'blog', label: 'Blog', position: 'left'},
