@@ -21,6 +21,10 @@ const links = [
     title: 'k8s 集群的二进制安装',
     url: '/blog/kubernetes-install-bin',
   },
+  {
+    title: 'ReentrantLock 简介',
+    url: '/blog/reentrant-lock',
+  },
 ];
 
 function Links({url, title}) {
