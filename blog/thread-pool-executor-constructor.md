@@ -4,7 +4,7 @@ title: ThreadPoolExecutor 之构造参数
 author: web1992
 author_title: Code of Java
 author_url: https://github.com/web1992
-author_image_url: img/avatars3.jpeg
+author_image_url: /img/avatars3.jpeg
 tags: [java]
 ---
 
