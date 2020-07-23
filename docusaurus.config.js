@@ -1,6 +1,6 @@
 module.exports = {
-  title: '西西 Blog',
-  tagline: '西西 Blog',
+  title: 'web1992 Blog',
+  tagline: 'web1992 Blog',
   url: 'https://blog.web1992.cn',
   baseUrl: '/',
   favicon: 'img/avatars3.jpeg',
@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'read', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: '西西·Blog',
+      title: 'web1992·Blog',
       logo: {
         alt: 'My Site Logo',
         src: 'img/avatars3.jpeg',
@@ -46,7 +46,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 西西`,
+      copyright: `Copyright © ${new Date().getFullYear()} web1992`,
     },
   },
   presets: [
