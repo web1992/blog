@@ -440,10 +440,14 @@ openssl req  -new  -key cs_client.key -subj "/CN=121.36.133.225" -days 10000 -ou
 openssl x509 -req -in cs_client.csr   -CA ca.crt -CAkey ca.key -CAcreateserial -out cs_client.crt -days 10000
 ```
 
+`kubectl` 使用证书查询 `Node` 信息
+
+```sh
 kubectl --server=https://192.168.1.10:6443 \
 --client-certificate=/etc/kubernetes/cs_client.crt \
 --client-key=/etc/kubernetes/cs_client.key \
 --certificate-authority=/etc/kubernetes/ca.crt get nodes
+```
 
 ## 常用命令
 
