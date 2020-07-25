@@ -120,7 +120,7 @@ final Node<K,V>[] resize() {
 
 先看下数据扩容之后一种可能的元素位置的变化,如下图
 
-![move element](/images/hashmap-element-move.png)
+![move element](/images/hashmap-node-move.png)
 
 如上图所示，移动前后元素位置和链表的对比(这里是数据扩容之后，链表拆分&元素移动之后的结果)
 
@@ -200,7 +200,7 @@ if (hiTail != null) {// 不为空
 
 我们这里把新的数组分成两部分，`旧位置`和`新位置`（只是为了方便理解），如下图:
 
-![hashmap-new-array.png](/images/hashmap-new-array.png)
+![hashmap-new-array.png](/images/hashmap-array-resize.png)
 
 那么 `Node1.hash=2` 应该放在`旧数组`的位置， `Node2.hash=10` 应该放在`新数组`的位置（这样才能保证get在新数组中执行Hash计算的位置是正确的）
 
