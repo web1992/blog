@@ -15,7 +15,8 @@ k8s 集群的二进制安装 (OS: CentOS 7)
 ## kubernetes install bin
 
 - [kubernetes install bin](#kubernetes-install-bin)
-- [安装组件](#安装组件)
+- [安装组件图](#安装组件图)
+- [下载](#下载)
 - [Master](#master)
   - [kube-apiserver.service](#kube-apiserverservice)
   - [kube-controller-manager.service](#kube-controller-managerservice)
@@ -38,9 +39,19 @@ k8s 集群的二进制安装 (OS: CentOS 7)
 - [常用命令](#常用命令)
 - [Link](#link)
 
-## 安装组件
+## 安装组件图
 
-![k8s-bin.png](https://web1992-1258160421.cos.ap-shanghai.myqcloud.com/k8s-bin.png)
+![k8s-bin.png](/images/k8s-bin.png)
+
+## 下载
+
+下载按照所需要的二进制文件：
+
+- https://github.com/coreos/flannel/releases/tag/v0.12.0
+- https://github.com/kubernetes/kubernetes/releases/tag/v1.18.6
+- https://github.com/etcd-io/etcd/releases/tag/v3.4.10
+
+下载的文件是 `linux-arm64.tar.gz` 结尾的文件即可
 
 ## Master
 
@@ -62,11 +73,23 @@ docker.service
 etcd.service
 ```
 
+下面是各个服务的配置，配置完成之后，使用下面的命令启动即可
+
+```sh
+systemctl enable kube-apiserver.service
+systemctl start kube-apiserver.service
+systemctl status kube-apiserver.service
+```
+
+:::tip
+如果启动失败，可以使用 `journalctl -f` 查看日志，或使用 `ExecStart` 对应的执行文件路径进行手动启动，查看日志
+:::
+
 ### kube-apiserver.service
 
 `/usr/lib/systemd/system`
 
-cat `kube-apiserver.service`
+`kube-apiserver.service`
 
 ```conf
 [Unit]
@@ -156,6 +179,10 @@ ExecStart=/usr/bin/etcd --enable-v2=true --listen-client-urls=http://0.0.0.0:237
 WantedBy=multi-user.target
 ```
 
+:::important
+如果使用的是 etcd3，etcd 的参数需要添加 --enable-v2=true 指定启用 v2 api (http)
+:::
+
 ### docker.service
 
 #### install docker on centos
@@ -176,7 +203,7 @@ sudo systemctl enable docker
 
 #### 设置镜像地址
 
-`cat /etc/docker/daemon.json`
+`/etc/docker/daemon.json`
 
 ```json
 {
@@ -201,7 +228,7 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 `flanneld` 安装的目的是为了让 Pod 直接进行通信
 
-cat flanneld.service
+`flanneld.service`
 
 ```[Unit]
 Description=Flanneld
@@ -278,7 +305,7 @@ users:
 
 ### kubelet.service
 
-cat kubelet.service
+`kubelet.service`
 
 ```conf
 [Unit]
@@ -301,7 +328,7 @@ WantedBy=multi-user.target
 
 ### kube-proxy.service
 
-cat kube-proxy.service
+`kube-proxy.service`
 
 ```conf
 [Unit]
@@ -321,7 +348,7 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-cat /etc/kubernetes/proxy
+`/etc/kubernetes/proxy`
 
 ```conf
 KUBE_PROXY_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig \
@@ -331,7 +358,7 @@ KUBE_PROXY_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig \
 --v=5"
 ```
 
-cat /etc/kubernetes/kubelet
+`/etc/kubernetes/kubelet`
 
 ```conf
 KUBELETE_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig \
@@ -346,24 +373,7 @@ KUBELETE_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig \
 
 ### Master 签发证书
 
-openssl genrsa -out cs_client.key 2048
-
-openssl req  -new  -key cs_client.key -subj "/CN=rourou.xyz" -days 10000 -out cs_client.csr
-
-openssl x509 -req -in cs_client.csr   -CA ca.crt -CAkey ca.key -CAcreateserial -out cs_client.crt -days 10000
-
-client-certificate: /etc/kubernetes/cs_client.crt
-client-key: /etc/kubernetes/cs_client.key
-certificate-authority: /etc/kubernetes/ca.crt
-
-### Node 签发证书
-
-kubectl --server=https://192.168.1.10:6443 \
---client-certificate=/etc/kubernetes/cs_client.crt \
---client-key=/etc/kubernetes/cs_client.key \
---certificate-authority=/etc/kubernetes/ca.crt get nodes
-
-openssl req -x509 -new -nodes -key ca.key -subj "/CN=rourou.xyz" -days 10000 -out ca.crt
+`csr.conf`
 
 ```conf
 [ req ]
@@ -402,6 +412,16 @@ subjectAltName=@alt_names
 
 ```
 
+```sh
+openssl genrsa -out ca.key 2048
+openssl req -x509 -new -nodes -key ca.key -subj "/CN=主机的名称" -days 10000 -out ca.crt
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -out server.csr -config csr.conf
+openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 10000 -extensions v3_ext -extfile csr.conf
+```
+
+修改配置
+
 ```conf
 --client-ca-file=/etc/kubernetes/ca.crt \
 --tls-private-key-file=/etc/kubernetes/server.key \
@@ -409,6 +429,21 @@ subjectAltName=@alt_names
 --insecure-port=0 \
 --secure-port=6443 \
 ```
+
+### Node 签发证书
+
+依赖 在 Master 上生产的 ca.crt 文件
+
+```sh
+openssl genrsa -out cs_client.key 2048
+openssl req  -new  -key cs_client.key -subj "/CN=121.36.133.225" -days 10000 -out cs_client.csr
+openssl x509 -req -in cs_client.csr   -CA ca.crt -CAkey ca.key -CAcreateserial -out cs_client.crt -days 10000
+```
+
+kubectl --server=https://192.168.1.10:6443 \
+--client-certificate=/etc/kubernetes/cs_client.crt \
+--client-key=/etc/kubernetes/cs_client.key \
+--certificate-authority=/etc/kubernetes/ca.crt get nodes
 
 ## 常用命令
 

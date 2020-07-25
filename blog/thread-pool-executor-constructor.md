@@ -45,8 +45,8 @@ public ThreadPoolExecutor(
 
 虽然 Executors 提供了众多的方法来创建线程池，但是如果使用不当，可能引发风险
 
-- 风险一：无限制的创建线程导致，机器资源耗尽，服务宕机,比如: Executors.newCachedThreadPool
-- 风险二：没有限制BlockingQueue队列的大小，导致内存消耗过大，比如: Executors.newFixedThreadPool
+- 风险一：无限制的创建线程导致，机器资源耗尽，服务宕机,比如: Executors.newCachedThreadPool (maximumPoolSize 为 Integer.MAX_VALUE)
+- 风险二：没有限制BlockingQueue队列的大小，导致内存消耗过大，比如: Executors.newFixedThreadPool (LinkedBlockingQueue 队列是无边界的)
 
 :::
 

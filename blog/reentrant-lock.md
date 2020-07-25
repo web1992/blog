@@ -37,7 +37,6 @@ tags: [java]
 - [demo](#demo)
 - [Link](#link)
 
-
 ## Lock interface
 
 ```java
