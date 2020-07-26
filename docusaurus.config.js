@@ -25,7 +25,7 @@ module.exports = {
         {
           href: 'https://github.com/web1992/read',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
         },
       ],
     },
@@ -46,7 +46,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} web1992`,
+      copyright: `Copyright © ${new Date().getFullYear()} web1992 | Build by  <a href="https://v2.docusaurus.io/">Docusaurus<a/> `,
     },
   },
   presets: [
